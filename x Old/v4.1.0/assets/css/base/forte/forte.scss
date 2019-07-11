@@ -1,0 +1,148 @@
+@import "main.scss";
+ 
+
+.cl-black, .text-black {
+	color: #000 !important;
+}
+.bg-black {
+	background: #000 !important;
+}
+
+/* Navbar
+-------------------------------------------------- */
+.navbar {
+	z-index: 50;
+}
+.navbar-toggler {
+	position: fixed;
+	right: 1rem;
+	top: 0.75rem;
+	z-index: 1000;
+}
+.navbar-light {
+	.nav-link {
+		color: #333 !important;
+	}
+}
+.navbar-dark {
+	.nav-link {
+		color: #fff !important;
+	}
+}
+
+
+@include media-breakpoint-down(sm) {
+	.navbar + * {
+		margin-top: 64px !important;
+	}
+	.navbar-brand {
+		position: absolute;
+		top: 2rem;
+	}
+	.navbar-collapse {
+		display: none !important;
+	}
+}
+
+/* Side Navbar
+-------------------------------------------------- */
+.side-navbar {
+	width: 100vw;
+	height: 103vh;
+	background: #fbfbfb;
+	position: fixed;
+	padding-top: 4rem;
+	padding-left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	overflow-y: scroll;
+	overflow-x: visible;
+	z-index: 100;
+	display: none;
+	.absolute-side-navbar {
+		position: absolute;
+    	width: 100vw;
+    	left: 0px;
+	}
+	.dropdown-item {
+		padding-top: 1.5rem;
+		padding-left: 2.5rem;
+	}
+	ul {
+		overflow: scroll;
+		list-style-type: none;
+		padding-left: 0px;
+		.nav-item {
+			padding: 0.5rem 0.25rem;
+		}
+	}
+}
+
+
+/* Home
+-------------------------------------------------- */
+.owl-carousel-container {
+	margin-top: -64px !important;
+	@include media-breakpoint-down(sm) {
+
+	}
+}
+.item {
+	@include media-breakpoint-down(sm) {padding-left: 10px; padding-right: 10px;margin-bottom: 2rem;}
+	@include media-breakpoint-up(md) {height: 100vh;}
+}
+.owl-carousel.off {
+    display: block;
+}
+.owl-nav {
+	span {
+ 		display: none; 
+	}
+}
+
+.owl-prev, .owl-next {
+  height: 100%;
+  position: absolute;
+  z-index: 1000 !important;
+  top: 0px !important;
+  width: 100px; }
+
+.owl-next {
+  right: 0px; 
+  &:hover {
+    cursor: e-resize !important; 
+	}
+}
+.owl-prev {
+	&:hover {
+  		cursor: w-resize !important; 
+	}
+}
+
+
+/* Projects
+-------------------------------------------------- */
+.section-portfolio {
+	padding-top: 10rem;
+	@include media-breakpoint-up(md) {
+		padding-bottom: 0px !important;
+	}
+}
+
+
+
+/* Read Me
+-------------------------------------------------- */
+.section-read-me {
+	.row {
+		border-top: 1px solid rgba(0,0,0,0.35) !important;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+  		@include media-breakpoint-up(md){
+	  		.col-md-4:nth-child(2) {
+				padding: 0px 15px;
+			}
+		}
+	}
+}

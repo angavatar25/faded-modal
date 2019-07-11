@@ -1,0 +1,305 @@
+/*
+ * Antikode main.scss
+ * Version - 1.5.0
+ * Bootstrap - 4.3.1
+ *
+ * Copyright (c) 2019 Antikode
+ */
+
+/* ========================================================================================================================================
+   Import
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Bootstrap / Base
+   ========================================================================== */
+
+/// Required BS4 functions
+@import "~bootstrap/scss/functions"; // Placed up top because _variables-custom is using some of the functions
+
+/// Custom variables
+@import "variables-custom"; // Antikode custom variables
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+
+/* ==========================================================================
+   Core UI
+   ========================================================================== */
+
+// Override Boostrap variables
+@import "~@coreui/coreui/scss/variables"; // Core UI custom variables (modified) - Turned off the @import from the default variables file
+
+// Import core styles
+@import "~@coreui/coreui/scss/mixins";
+
+// Components
+@import "~@coreui/coreui/scss/charts";
+@import "~@coreui/coreui/scss/footer";
+@import "~@coreui/coreui/scss/header";
+@import "~@coreui/coreui/scss/sidebar";
+@import "~@coreui/coreui/scss/switches";
+
+// Layout Options
+@import "~@coreui/coreui/scss/layout";
+
+/* ==========================================================================
+   Antikode
+   ========================================================================== */
+
+@import "mixins";
+@import "utilities";
+@import "alert";
+@import "buttons";
+@import "card";
+@import "cover";
+@import "dropdown";
+@import "forms";
+@import "layout";
+@import "loader";
+@import "modal";
+@import "navbar";
+@import "progress";
+@import "scroll-hint";
+@import "table";
+
+/* Additional Custom SASS
+-------------------------------------------------- */
+@import "components-custom"; // Custom components classes
+
+/* Optional Library Plugins
+-------------------------------------------------- */
+/// Font Awesome 5
+// For general font icons
+@import "../plugins/fontawesome-5.5.0/css/all.min.css";
+
+/// jQuery UI
+// Has dependency on script.php
+@import "~jquery-ui-dist/jquery-ui.min.css";
+
+/// Animate CSS
+// For main animations
+@import "~animate.css/animate.min.css";
+
+/// Fancy Box
+// For lightbox
+// Has dependency on script.php
+@import "~fancybox/dist/css/jquery.fancybox.css";
+
+/// Owl Carousel CSS
+// For advanced carousel
+// Some has dependency on script.php
+@import "~owl.carousel/dist/assets/owl.carousel.css";
+@import "~owl.carousel/dist/assets/owl.theme.default.min.css";
+
+/// Slick Carousel
+// For advanced carousel
+// Has dependency on script.php
+// @import "~slick-carousel/slick/slick";
+// @import "~slick-carousel/slick/slick-theme";
+
+/// Select2
+// For custom select
+// Has dependency on script.php
+@import "~select2/dist/css/select2.min.css";
+
+/// DataTables
+// For advanced table
+// Has dependency on script.php
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css";
+
+/// Bootstrap Datepicker
+// For datepicker
+// Has dependency on script.php
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+
+/// Date Range Picker for Bootstrap
+// For datepicker
+// Has dependency on script.php
+@import "~daterangepicker/daterangepicker.css";
+
+/// Bootstrap Date Time Picker
+// For datetimepicker
+// Has dependency on script.php
+/*@import "../plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css";*/
+
+/// Progress Button
+// For button progress animation
+// Has dependency on script.php
+// @import "../plugins/progressbutton-1.0.0/component.css";
+
+/// Antikode Custom CSS
+// For component based CSS customized by the author
+// Some has dependency on script.php
+// @import "../plugins/antikode-custom-1.0.0/animate.scss";
+
+/// Icomoon
+// For custom icon fonts
+// @import "../plugins/icomoon/style.scss";
+
+/* ========================================================================================================================================
+   Common Components
+   ========================================================================================================================================= */
+.ps__rail-y {
+  height: 0px !important;
+
+  .ps__thumb-y {
+    height: 50px !important;
+  }
+}
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+/* Custom Fonts
+-------------------------------------------------- */
+@include font-face("Proxima Nova", "Proxima Nova Light", 200);
+@include font-face("Proxima Nova", "Proxima Nova Regular", 400);
+@include font-face("Proxima Nova", "Proxima Nova Semibold", 600);
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* General
+-------------------------------------------------- */
+.our-team {
+  .team-member {
+    margin: 0 3% 90px;
+    .member-image {
+      margin-bottom: 2.1875rem;
+      overflow: hidden;
+      position: relative;
+      max-width: 25rem;
+      max-height: 25rem;
+      .image-main {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.at-section {
+  z-index: 100;
+  .modal {
+    .modal-dialog {
+      max-width: 100%;
+      .modal-content {
+        z-index: 1;
+        @include media-breakpoint-up(md) {
+          height: calc(100vh - 50px);
+        }
+        .modal-body {
+          overflow: scroll;
+          @include media-breakpoint-down(sm) {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, #EFEFEF, rgba(239,239,239,0));
+          }
+          .wrapper-content {
+            @include media-breakpoint-up(md) {
+              width: 45%;
+              padding: 125px 75px 100px;  
+            }
+            @include media-breakpoint-down(sm) {
+              margin-top: 18.75rem;
+              margin-left: 14px;
+              margin-right: 14px;
+            }
+            .modal-teamname {
+              .name {
+                &::after {
+                  content: '-';
+                  display: block;
+                }
+              }
+            }
+            .modal-title {
+              .title {
+                margin-right: 1.25rem;
+              }
+              li {
+                list-style-type: none;
+                display: inline-block;
+                position: relative;
+              }
+            }
+            .text {
+              line-height: 2;
+            }
+          }
+          .modal-image {
+            &::before {
+              content: '';
+            }
+            background-image: url("/assets/img/hehe/Heather_Popup_Test_6.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center left;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: -10;
+            @include media-breakpoint-down(sm) {
+              height: 25rem;
+              &::before {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                z-index: -5;
+                background: -webkit-gradient(linear, left bottom, left top, from(#EFEFEF), to(rgba(239,239,239,0)));
+                background: linear-gradient(to top, #EFEFEF, rgba(239,239,239,0));
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+// Add custom styles here

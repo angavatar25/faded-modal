@@ -1,0 +1,138 @@
+$bg-dir:'../../assets/img/bg'; 
+@mixin bg-cover($bg-src)  {
+  background: url('#{$bg-dir}/#{$bg-src}') no-repeat center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@mixin bg-100($bg-src)  {
+  background: url('#{$bg-dir}/#{$bg-src}') no-repeat center;
+ -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+@mixin bg-cover-color($bg-color, $bg-src)  {
+  background: linear-gradient(to right top,
+      rgba(0, 63, 121,0.8), 
+      rgba(0, 147, 217,0.8)
+    ), url('#{$bg-dir}/#{$bg-src}') no-repeat center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  
+  background-size: cover;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin flex {
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;  
+}
+@mixin centered-flex {
+  @include flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+@mixin row-flex {
+  @include flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+}
+@mixin alignitems($dir) {
+  -webkit-align-items: $dir;
+  -moz-align-items: $dir;
+  align-items: $dir;
+}
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin box-shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow:  $x $y $blur $color;
+   -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+@mixin linear-gradient($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+@mixin transition($direction, $duration, $timing, $delay) {
+  -webkit-transition: $direction $duration $timing $delay;
+  -moz-transition: $direction $duration $timing $delay;
+  transition: $direction $duration $timing $delay;
+}
+@mixin gen-transition($direction, $duration) {
+  -webkit-transition: $direction $duration;
+  -moz-transition: $direction $duration;
+  transition: $direction $duration;
+}
+
+@mixin rotate($degree) {
+  -ms-transform: rotate($degree); 
+  -webkit-transform: rotate($degree); 
+  transform: rotate($degree);
+}
+
+@mixin animation ($name, $time, $direction, $count) {
+  -webkit-animation: $name $time $direction;
+  -moz-animation: $name $time $direction;
+  animation: $name $time $direction;
+  -webkit-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-delay($delay) {
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  transition-delay: $delay;
+}
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content }
+  :-moz-placeholder           { @content }
+  ::-moz-placeholder          { @content }
+  :-ms-input-placeholder      { @content }  
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin calc($property, $expression){
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression}); 
+}
+
+@mixin grid-display($flex) {
+    @if $flex {
+        @include flex;
+    } @else {
+        display: block;
+    }
+}

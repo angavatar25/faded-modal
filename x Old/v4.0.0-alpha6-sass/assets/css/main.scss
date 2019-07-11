@@ -1,0 +1,1327 @@
+@import "fonts.css";
+
+/* ==========================================================================
+    Media Queries
+   ========================================================================== */
+
+$max-sm: 575px;
+$break-sm: 576px;
+
+$max-md: 767px;
+$break-md: 768px;
+
+$max-lg: 991px;
+$break-lg: 992px;
+
+$max-xl: 1199px;
+$break-xl: 1200px;
+
+
+/* ==========================================================================
+    Mixin and Placeholder
+   ========================================================================== */
+
+$bg-dir:'../../assets/img/bg'; 
+@mixin bg-cover($bg-src)  {
+  background: url('#{$bg-dir}/#{$bg-src}') no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@mixin bg-cover-color($bg-color, $bg-src)  {
+  background: $bg-color url('#{$bg-dir}/#{$bg-src}') no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  
+  background-size: cover;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin flex {
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;  
+}
+@mixin centered-flex {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin box-shadow {
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
+}
+@mixin linear-gradient($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+@mixin transition($direction, $duration, $timing, $delay) {
+  -webkit-transition: $direction $duration $timing $delay;
+  -moz-transition: $direction $duration $timing $delay;
+  transition: $direction $duration $timing $delay;
+}
+@mixin animation ($name, $time, $direction, $count) {
+  -webkit-animation: $name $time $direction;
+  -moz-animation: $name $time $direction;
+  animation: $name $time $direction;
+  -webkit-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-delay($delay) {
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  transition-delay: $delay;
+}
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content }
+  :-moz-placeholder           { @content }
+  ::-moz-placeholder          { @content }
+  :-ms-input-placeholder      { @content }  
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin calc($property, $expression){
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression}); 
+}
+
+@mixin grid-display($flex) {
+  @if $flex {
+      @include flex;
+  } @else {
+      display: block;
+  }
+}
+
+/* ==========================================================================
+   Color
+   ========================================================================== */
+
+$white: #fff;
+$black: #000;
+$alt-black: #333;
+
+/* ========================================================================================================================================
+   jQuery UI 1.12.1 Overriders (Author's Version of Normalization)
+   ========================================================================================================================================= */
+
+/* Image Path
+-------------------------------------------------- */
+.ui-icon {width: 16px; height: 16px; }
+.ui-icon, .ui-widget-content .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_444444_256x240.png"); }
+.ui-widget-header .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_444444_256x240.png"); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_555555_256x240.png"); }
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_ffffff_256x240.png"); }
+.ui-state-highlight .ui-icon, .ui-button .ui-state-highlight.ui-icon {background-image: url("../../assets/img/plugins/ui-icons_777620_256x240.png"); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_cc0000_256x240.png"); }
+.ui-button .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_777777_256x240.png"); }
+
+/* Font
+-------------------------------------------------- */
+.ui-widget {
+  font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Datepicker
+-------------------------------------------------- */
+.ui-state-default {
+  border: 1px solid #eee;
+  border-radius: .25rem;
+  background: #f6f6f6;
+  font-weight: normal;
+  color: $alt-black;
+  text-align: center;
+}
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default, 
+.ui-button, 
+html .ui-button.ui-state-disabled:hover, 
+html .ui-button.ui-state-disabled:active {
+  @extend .ui-state-default;
+}
+.ui-state-hightlight {
+  border: 1px solid #dad55e;
+  background: $white;
+  color: #777620;
+}
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight {
+  @extend .ui-state-hightlight;
+}
+.ui-state-active {
+  border: 1px solid $alt-black;
+  background: $alt-black;
+  font-weight: normal;
+  color: $white;
+}
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active, a.ui-button:active, 
+.ui-button:active, .ui-button.ui-state-active:hover {
+  @extend .ui-state-active;
+}
+
+
+/* ========================================================================================================================================
+   Bootstrap Overriders (Author's Version of Normalization)
+   ========================================================================================================================================= */
+
+/* Default Row
+-------------------------------------------------- */
+.row {
+  margin-right: -10px; /* Originally 15 */
+  margin-left: -10px; /* Originally 15 */
+}
+.row > [class^="col"] {
+  padding-right: 10px; /* Originally 15 */
+  padding-left: 10px; /* Originally 15 */
+}
+
+/* Row / Col Variations
+-------------------------------------------------- */
+.row-n {
+  margin-right: 0px;
+  margin-left: 0px; 
+  & > [class^="col"] {
+    padding-right: 0px; padding-left: 0px;
+  }
+}
+.row-5 {
+  margin-right: -5px;
+  margin-left: -5px;
+  & > [class^="col"] {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+.row-10 {
+  margin-right: -5px;
+  margin-left: -5px;
+  & > [class^="col"] {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+.row-15 {
+  margin-right: -15px;
+  margin-left: -15px;
+  & > [class^="col"] {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+.row-20 {
+  margin-right: -20px;
+  margin-left: -20px;
+  & > [class^="col"] {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+.row-25 {
+  margin-right: -25px;
+  margin-left: -25px;
+  & > [class^="col"] {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+.row-30 {
+  margin-right: -30px;
+  margin-left: -30px;
+  & > [class^="col"] {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+
+/* Global Overriders
+-------------------------------------------------- */
+a {
+  @include transition(color, 0.25s, ease-in-out, 0s);
+  cursor: pointer;
+  color: #999;
+  &:focus, &:hover {
+    text-decoration: none;
+    color: $alt-black;
+  }
+  &:focus {
+    outline-offset: none;
+  }
+}
+textarea {
+  resize: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+tbody {
+  tr {
+    td.no-record {
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      color: #999;
+      font-style: italic;  
+    }
+  }
+}
+.img {
+  background: #f0f0f0 url(../../assets/img/loading.gif) center no-repeat;
+}
+
+/* Text Color
+-------------------------------------------------- */
+.text-color {color: $white;}
+
+/* Background Color
+-------------------------------------------------- */
+.bg-color {color: $white;}
+
+
+/* ========================================================================================================================================
+   Chrome Frame Support
+   ========================================================================================================================================= */
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+/* ========================================================================================================================================
+   Helper Class
+   ========================================================================================================================================= */
+
+/* Animated
+-------------------------------------------------- */
+.animated {
+  opacity: 0;
+}
+
+/* Delays
+-------------------------------------------------- */
+$class-delay: delayp;
+@for $i from 1 through 20 { 
+  .#{$class-delay}#{$i} {
+    animation-delay: 0s + $i*0.1;
+    -moz-animation-delay: 0s + $i*0.1; 
+    -webkit-animation-delay: 0s + $i*0.1; 
+    -o-animation-delay: 0s + $i*0.1; 
+    transition-delay: 0s + $i*0.1; 
+  }
+}
+
+/* Ellipsis
+-------------------------------------------------- */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Set div in the middle
+-------------------------------------------------- */
+.outer-center {
+  float: right;
+  right: 50%;
+  position: relative;
+}
+.inner-center {
+  float: right;
+  right: -50%;
+  position: relative;
+}
+
+/* Button Center
+-------------------------------------------------- */
+.btn-x-auto-150 {
+  margin: auto;
+  display: block !important;
+  width: 150px;
+}
+.btn-x-auto-200 {
+  margin: auto;
+  display: block !important;
+  width: 200px;
+}
+.btn-x-auto-250 {
+  margin: auto;
+  display: block !important;
+  width: 250px;
+}
+
+/* Image Replacement
+-------------------------------------------------- */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+
+/* Hide / Visible
+-------------------------------------------------- */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visible {
+  opacity: 1;
+}
+
+/* Viewport Animation
+-------------------------------------------------- */
+.vp-fadeinleft, .vp-fadeinright, .vp-fadein, .vp-fadeindown, 
+.vp-fadeinup, .vp-slideinleft, .vp-slideinright, .vp-zoomin,
+.vp-zoomindown, .vp-rotatein, .vp-slideindown {
+  opacity: 0;
+}
+
+/* Form Text
+-------------------------------------------------- */
+.form-text {
+  color: #999 !important;
+  font-size: .7rem;
+  margin-top: .5rem;
+}
+
+
+/* ========================================================================================================================================
+   Common Components
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Body / Containers
+   ========================================================================== */
+
+@media (max-width: $max-md) {
+  html {
+    overflow-x: hidden !important;
+  }
+}
+body {
+  @include bg-cover('bg_cover-name.jpg');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../assets/bg_cover-name.jpg',sizingMethod='scale')";
+  line-height: 1.6;
+  font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden !important;
+}
+
+.container, .container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: $break-md) {
+  .container, .container-fluid {
+    padding-left: 15px; /* originally 15 */
+    padding-right: 15px; /* originally 15 */
+  }
+  .container {
+    &.container-md {
+      max-width: 1000px;
+    }
+  }
+  .container {
+    &.container-sm {
+      max-width: 700px;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Cover
+   ========================================================================== */
+
+/* General
+-------------------------------------------------- */
+.cover {
+  padding: 2rem 1rem;
+  background-color: #eceeef;
+  border-radius: 0.3rem;
+  @media (min-width: $break-sm) {
+    padding: 4rem 2rem;
+  }
+}
+.cover-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  background-color: #eceeef;
+}
+
+/* Cover Vertically Centered
+-------------------------------------------------- */
+.cover  {
+  background-color: #eceeef;
+  position: relative;
+  padding: 0;
+  border-radius: 0;
+  .container {
+    height: 500px;
+    @include flex();
+  }
+  .content {
+    max-width: 500px;
+  }
+}
+
+/* Cover Overlay
+----------------------------------------------------- */
+.cover-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &.cover-overlay-20 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    background-size: cover;
+  }
+  &.cover-overlay-30 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+  }
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.section-main {
+  padding: 2.5rem 0;
+  @media (min-width: $break-md) {
+    padding: 5rem 0;
+  }
+}
+
+
+/* ==========================================================================
+   Headings / Typography
+   ========================================================================== */
+
+.heading {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  *:last-child {
+    margin-bottom: 0px;
+  }
+}
+.heading-title {
+  /* Insert content here */
+}
+.heading-subtitle {
+  /* Insert content here */
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* Btn General
+-------------------------------------------------- */
+.btn {
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  @include transition(all, 0.25s, ease-in-out, 0s);
+  cursor: pointer;
+  &:focus, .focus, &:active:focus, &:active.focus, .active:focus, .active.focus {
+    outline: none
+  }
+}
+
+/* Btn Primary
+-------------------------------------------------- */
+.btn-primary {
+  color: $white;
+  background-color: #0275d8;
+  border-color: #0275d8;
+  &:hover, &:focus, .focus {
+    background-color: #025aa5;
+    border-color: #01549b;
+    box-shadow: none;
+  }
+  .disabled, &:disabled {
+    background-color: #0275d8;
+    border-color: #0275d8;
+  }
+}
+
+/* Btn Primary Light
+-------------------------------------------------- */
+.btn-primary-light {
+  color: $alt-black;
+  background-color: $white;
+  border-color: $white;
+  &:hover, &:focus, .focus {
+    @extend .btn-primary-light;
+    opacity: .8;
+    box-shadow: none;
+  }
+  .disabled, &:disabled {
+    @extend .btn-primary-light;
+    opacity: .5; 
+  }
+}
+
+/* Btn Secondary
+-------------------------------------------------- */
+.btn-secondary {
+  color: #373a3c !important;
+  background-color: $white;
+  border-color: #ccc;
+  &:hover, &:focus, .focus {
+    color: #373a3c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+  .disabled, &:disabled {
+    background-color: $white;
+    border-color: #ccc;  
+  }
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+.btn-group-lg {
+  & > .btn {
+    @extend .btn-lg;
+  }
+}
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+.btn-group-sm {
+  & > .btn {
+    @extend .btn-sm;
+  }
+}
+
+/* Btn Link
+-------------------------------------------------- */
+.btn-link {
+  font-weight: normal;
+  color: #999;
+  border-radius: 0;
+  border-color: transparent;
+  &:active, .active, &:disabled, &:focus {
+    background-color: transparent;
+  }
+  &:focus, &:active {
+    color: $alt-black;
+    text-decoration: none;
+    border-color: transparent;
+  }
+  &:disabled {
+    color: $alt-black;
+    opacity: .75;
+  }
+  &:hover {
+    border-color: transparent;
+    .fa-angle-right {
+      margin-left: .5rem;
+    }
+  }
+  &:disabled:focus, &:disabled:hover {
+    text-decoration: none;
+  }
+  .fa-angle-right {
+    margin-left: .25rem;
+    @include transition(margin-left, .25s, ease-in-out, 0s);
+  }
+}
+
+
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table {
+  thead {
+    th {
+      vertical-align: middle;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.form-control {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: $alt-black;
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.125rem;
+  @include transition(all, .25s, ease-in-out, 0s);
+  &:focus {
+    color: #55595c;
+    background-color: $white;
+    border-color: #66afe9;
+  }
+  @include placeholder {
+    color: #999;
+    font-weight: 200; 
+  }
+}
+
+.form-control {
+  &.custom-select {
+    background: $white url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+    webkit-background-size: 8px 10px;
+    background-size: 8px 10px;
+  }
+}
+.form-control-sm {
+  padding: 0.25rem 0.25rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+.input-group-sm {
+  & > .form-control, & > .input-group-addon, & > .input-group-btn > .btn {
+    @extend .form-control-sm;
+  }
+}
+
+.form-control-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+.input-group-lg {
+  & > .form-control, & > .input-group-addon, & > .input-group-btn > .btn {
+    @extend .form-control-lg;
+  }
+}
+
+/* ==========================================================================
+   Alert
+   ========================================================================== */
+
+.alert {
+  padding: 1rem 0;
+  margin-bottom: 0rem;
+  border: 1px solid transparent;
+  border-radius: 0rem;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  z-index: 1000;
+  width: 100%;
+  & > .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (min-width: $break-lg) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+/* Alert Success
+-------------------------------------------------- */
+.alert-success {
+  color: $white;
+  background-color: #2a8d1a;
+  border-color: #2a8d1a;
+  hr {
+    border-top-color: transparent;
+  }
+  .alert-link {
+    color: $white;
+  }
+}
+
+/* Alert Info
+-------------------------------------------------- */
+.alert-info {
+  color: $white;
+  background-color: #2a9fd6;
+  border-color: #2a9fd6;
+  hr {
+    border-top-color: transparent;
+  }
+  .alert-link {
+    color: $white;
+  }
+}
+
+/* Alert Warning
+-------------------------------------------------- */
+.alert-warning {
+  color: $white;
+  background-color: #d6972a;
+  border-color: #d6972a;
+  hr {
+    border-top-color: transparent;
+  }
+  .alert-link {
+    color: $white;
+  }
+}
+
+/* Alert Error
+-------------------------------------------------- */
+.alert-danger {
+  color: $white;
+  background-color: #ce3c39;
+  border-color: #ce3c39;
+  hr {
+    border-top-color: transparent;
+  }
+  .alert-link {
+    color: #953b39;
+  }
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+
+.modal {
+  &.fade {
+    .modal-dialog {
+      @include translate(0, 0%);
+    }
+  }
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: .8rem;
+    @include transition(all, .25s, ease-in-out, 0s);
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
+.modal-content {
+  border: none;
+}
+.modal-header {
+  position: relative;
+}
+
+/*body.modal-open { 
+  overflow: inherit; 
+  padding-right: inherit !important; 
+}*/
+
+
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+
+/* General
+-------------------------------------------------- */
+.breadcrumb {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  & + .breadcrumb-item::before {
+    color: #999;
+  }
+  &.active {
+    color: $alt-black;
+  }
+}
+
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+
+/* OPTIONAL - Carousel Indicators (Rounded)
+-------------------------------------------------- */
+/*.carousel-indicators li {
+  height: 10px;
+  width: 10px;
+  max-width: 10px;
+  border-radius: 5px;
+}*/
+
+
+/* ==========================================================================
+   Loader
+   ========================================================================== */
+
+/* OPTIONAL - Animate with Image
+-------------------------------------------------- */
+/*.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  z-index: 99999;
+  height: 100%;
+  overflow: hidden;
+}
+.loader {
+  background: url('../../assets/img/loader.gif') no-repeat;
+  width: 140px;
+  height: 140px;
+  margin: -70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  background-size: 140px auto;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* OPTIONAL - Animate with CSS
+-------------------------------------------------- */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999999999;
+  height: 100%;
+  overflow: hidden;
+}
+.loader {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  @include animation(spin, 1s, linear, infinite);
+  margin: -15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+}
+.loader-light {
+  background: $white;
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #999;
+  }
+}
+.loader-dark {
+  background: #B6B0A3;
+  .loader {
+    border: 5px solid rgba(255,255,255,.5);
+    border-top: 5px solid $white;
+  }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Scroll Hint (Arrow Down)
+   ========================================================================== */
+
+.scroll-hint {
+  position: absolute;
+  display: block;
+  height: 75px;
+  width: 200px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  img {
+    position: absolute;
+    width: 50px;
+    margin-left: -25px;
+    left: 50%;
+    bottom: 0px;
+    display: inline-block;
+    @include animation(arrow_move, 1s, linear, infinite);
+  }
+}
+@-webkit-keyframes arrow_move {0% {opacity: 1; bottom: 100px; } 50% {opacity: 0; bottom: 96px; } 90% {opacity: 0; bottom: 100px; } 100% {opacity: 1; bottom: 100px; } }
+@-moz-keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+@-o-keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+@keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+
+
+/* ========================================================================================================================================
+   Author's Custom Styles
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+
+/* Navbar General
+-------------------------------------------------- */
+.navbar {
+  padding: 0;
+}
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  & + * {
+    margin-top: 75px;
+    @media (min-width: $break-md) {
+      margin-top: 92px;
+    }
+  }
+}
+
+/* Navbar Header / Brand / Toggle
+-------------------------------------------------- */
+.navbar-header {
+  border-bottom: 1px solid #eee;
+}
+.navbar-brand {
+  padding-left: 20px; /* Same as container's padding */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 200px;
+}
+.navbar-toggler {
+  padding: .75rem .5rem;
+  margin-top: .5rem;
+  margin-right: -.5rem;
+  &:focus {
+    outline: none;
+  }
+}
+@media (min-width: $break-md) {
+  .navbar-brand {
+    padding-left: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+/* OPTIONAL - Make mr-auto on .navbar-brand works to put the nav on the right.
+-------------------------------------------------- */
+/*@media (min-width: $break-md) {
+  .navbar-toggleable-sm .navbar-collapse,
+  .navbar-toggleable-md .navbar-collapse {
+    width: auto;
+  }
+}*/
+
+/* Navbar Toggler (BS3 Style)
+-------------------------------------------------- */
+.navbar-toggler {
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #ccc;
+    border-radius: 1px;
+    & + .icon-bar {
+      margin-top: 4px;
+    }
+  }
+}
+
+/* Navbar Nav
+-------------------------------------------------- */
+.navbar-nav {
+  .nav-link {
+    padding-top: .5rem;
+    padding-bottom: .5rem; 
+    &:focus, &:hover {
+      color: $alt-black;
+    }
+  }
+  .active {
+    & > .nav-link {
+      color: $alt-black;
+    }
+  }
+}
+@media (min-width: $break-md) {
+  .navbar-nav {
+    .nav-link {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .nav-item + .nav-item {
+      margin-left: 1.5rem;
+    }
+  }
+}
+@media (max-width: $break-sm) {
+  .navbar {
+    .container {
+      margin: 0;
+    }
+  }
+}
+@media (max-width: $max-md) {
+  .navbar-nav {
+    padding: 0 20px; /* Same as container's padding */
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+}
+
+
+/* Navbar Top / Bottom
+-------------------------------------------------- */
+@media (min-width: $break-md) {
+  .navbar-toggleable-sm {
+    -webkit-flex-direction: column; 
+    -ms-flex-direction: column;
+    flex-direction: column; 
+  }
+  .navbar-toggleable-sm {
+    .navbar-collapse {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    }
+  }
+  .navbar-top, 
+  .navbar-bottom {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Dropdown
+-------------------------------------------------- */
+.dropdown-menu {
+  position: relative;
+  float: none;
+  text-align: center;
+  background: $white !important;
+  border-radius: 4px;
+  border: none !important;
+  padding: .5rem 0;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  @media (min-width: $break-md) {
+    position: absolute;
+    text-align: left;
+    top: 70px;
+  }
+}
+.dropdown-item {
+  padding: .5rem 1.5rem .5rem;
+  color: #999;
+  &:focus, &:hover {
+    color: $alt-black;
+    background: none !important;
+  }
+}
+
+/* OPTIONAL - Custom dropdown toggle using FontAwesome
+-------------------------------------------------- */
+.dropdown-toggle {
+  &:after {
+    font-family: 'FontAwesome';
+    content: "\f107";
+    height: auto;
+    margin-left: 0.1em;
+    border: none;
+    opacity: .75;
+  }
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* OPTIONAL - Sticky Footer
+-------------------------------------------------- */
+.wrapper {
+  min-height: calc(100vh - 73px); /* Footer height */
+}
+
+/* General
+-------------------------------------------------- */
+footer {
+  background: #f9f9f9;
+  padding: 0;
+  .footer-top {
+    padding: 1.5rem 0;
+  }
+  .footer-bottom {
+    padding: 1rem 0;
+  }
+  @media (min-width: $break-md) {
+    .footer-top {
+      padding: 3rem 0;
+    }
+  }
+}
+
+/* Footer List
+-------------------------------------------------- */
+.footer-item {
+  margin-bottom: 1rem;
+  [class^="col-"]:last-child {
+    .footer-item {
+      margin-bottom: 0;
+    }
+  }
+  @media (min-width: $break-md) {
+    margin-bottom: 0;
+  }
+}
+.footer-brand {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.footer-social {
+  li {
+    display: inline-block;
+  }
+  a {
+    font-size: 1.5rem;
+  }
+} 
+
+
+/* ==========================================================================
+   Home
+   ========================================================================== */ 
+
+/* Cover
+-------------------------------------------------- */
+.cover-home {
+  @include bg-cover-color(#000, 'cover-home.jpg');
+}
+
+/* General
+-------------------------------------------------- */
+
+/* Enter style here */
+
+
+
+
+
+
+
+/* ==========================================================================
+   News
+   ========================================================================== */ 
+
+/* Cover
+-------------------------------------------------- */
+.cover-news {
+  @include bg-cover-color(#000, 'cover-news.jpg');
+}
+
+/* News Index
+-------------------------------------------------- */
+.news-index-item {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  margin-bottom: 1.5rem;
+}
+.news-index-img {
+  border-radius: .25rem;
+  overflow: hidden;
+}
+.news-index-datestamp {
+  color: rgba(0,0,0,.5);
+  display: block;
+}
+.news-index-block {
+  padding: 1.25rem 0 0;
+}
+.news-index-title {
+  color: $alt-black;
+}
+.news-index-text {
+  color: rgba(0,0,0,.75);
+}
+.news-index-link {
+  display: inline-block;
+  margin-top: .5rem;
+}
+
+@media (min-width: 568px) and (max-width: $max-md) {
+  .news-index-item:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media (min-width: $break-md) and (max-width: $break-lg) {
+  .news-index-item:nth-child(3n+1) {
+    clear: left;
+  }
+}
+@media (min-width: $break-lg) {
+  .news-index-item:nth-child(4n+1) {
+    clear: left;
+  }
+}
+
+/* News Details
+-------------------------------------------------- */
+.news-details-datestamp {
+  color: rgba(0,0,0,.5);
+  display: block;
+}
+

@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Form Pages
+   ========================================================================== */
+
+/* OTP
+-------------------------------------------------- */
+.pin-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  .form-control-pin {
+    width: 40px;
+    height: 60px;
+    padding-right: 0;
+    text-align: center;
+    font-size: 2rem;
+    background: #f3f3f3;
+    border-radius: .125rem;
+    margin: 0 .15rem;
+    &:focus {
+      background: #f3f3f3;
+    }
+    @include media-breakpoint-up(md) {
+      width: 50px;
+      height: 70px;
+    }
+  }
+}
+.pin-code-resend {
+  text-align: center;
+  width: 200px;
+  margin: 1.5rem auto 0;
+  display: block;
+  color: #63B1BC;
+  i {
+    margin-right: .25rem;
+  }
+}
+
+
+/* ==========================================================================
+   Products
+   ========================================================================== */
+
+/* Product List
+-------------------------------------------------- */
+.product-list {
+  .card {
+    margin-bottom: 2rem;
+    .card-img-container {
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      color: $body-color;
+      margin-bottom: .25rem;
+    }
+    .card-text {
+      color: $gray-400;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Accordion - List
+   ========================================================================== */
+
+.accordion-list {
+  width: 100%;
+  .card-header {
+    position: relative;
+    cursor: pointer;
+    // padding: .75rem 0;
+    h5 {
+      margin-bottom: 0;
+      padding-right: 2rem;
+    }
+    .close-panel {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: 0;
+      top: 50%;
+      margin-top: -7.5px;
+      &:after, &:before {
+        top: 7.5px;
+        right: 0;
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        transition: all 0.4s;
+      }
+    }
+    &[aria-expanded="false"] {
+      .close-panel {
+        &:before, &:after {background: $gray-400;}
+        &:after {transform: rotate(-90deg);}
+        &:before {transform: rotate(-180deg);}
+      }
+    }
+    &[aria-expanded="true"] {
+      color: $primary;
+      .close-panel {
+        &:before, &:after {
+          background: $primary;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  .card-body {
+    color: $gray-400;
+  }
+}

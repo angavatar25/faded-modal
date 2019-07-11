@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Import
+   ========================================================================== */
+
+/* Required
+-------------------------------------------------- */
+@import "bootstrap/functions";
+@import "variables-custom"; // Custom variables
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/* Optional
+-------------------------------------------------- */
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
+
+/* Additional Custom SASS
+-------------------------------------------------- */
+@import "mixins-andy"; // Andy.scss (modified)
+@import "mixins-custom"; // Custom mixins & utilities classes
+@import "utilities-custom"; // Custom mixins & utilities classes
+
+/* Optional Library Plugins
+-------------------------------------------------- */
+/// Font Awesome 5
+// For general font icons
+// Modified the directory to (../../fonts/fontsawesome)
+// Has dependency on /fonts
+@import "fontawesome/fontawesome-all-5.0.13.min.css"; 
+
+/// jQuery UI
+// Has dependency on /script & /img
+@import "jquery-ui/jquery-ui-1.12.1.min.css";
+
+/// Fancy Box
+// For lightbox
+// Has dependency on /script
+@import "fancybox/jquery.fancybox.3.3.5.min.css";
+
+/// Select2
+// For custom select 
+// Has dependency on /script
+@import "select2/select2.4.0.6.min.css"; 
+
+/// Select2
+// For advanced table
+// Has dependency on /script
+@import "datatable/datatable-1.10.16.min.css"; 
+
+/// Animate CSS
+// For main animations
+@import "animate-css/animate-3.6.0.min.css"; 
+
+/// Progress Button
+// For button progress animation
+// Modified the directory to (../../fonts/progressbutton)
+// Has dependency on /fonts
+@import "progressbutton/component.css";
+
+/// Antikode Custom CSS
+// For component based CSS customized by the author
+// Some has dependency on /script
+@import "antikode-custom/animate.scss";
+
+
+
+/* ========================================================================================================================================
+   Common Components
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+/* Custom Fonts
+-------------------------------------------------- */
+// @include font-face('FontName', 'filename', 200);
+// @include font-face('FontName', 'filename', 400);
+// @include font-face('FontName', 'filename', 600);
+
+@include font-face('Proxima Nova', 'Proxima Nova Light', 200);
+@include font-face('Proxima Nova', 'Proxima Nova Regular', 400);
+@include font-face('Proxima Nova', 'Proxima Nova Semibold', 600);
+
+@include font-face('Playfair Display', 'PlayfairDisplay-Regular', 400);
+@include font-face('Playfair Display', 'PlayfairDisplay-Bold', 700);
+@include font-face('Playfair Display', 'PlayfairDisplay-Black', 900);
+
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+// Add custom styles here
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+label {
+  // Add custom styles here
+}
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  color: $white; // Change this value as needed
+  &:hover {
+    color: $white; // Change this value as needed
+  }
+}
+
+
+/* ==========================================================================
+   Cover
+   ========================================================================== */
+
+.cover {
+  position: relative;
+  height: 500px; // Change this value as needed
+  @include media-breakpoint-up(md) {
+    height: 500px; // Change this value as needed
+  }
+}
+
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+.navbar {
+  .nav-link {
+    color: rgba(255,255,255,.75);
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.navbar-absolute {
+  @include media-breakpoint-down(sm) {
+    height: 64px; // Set navbar height
+  }
+  .navbar-collapse-absolute {
+    @include media-breakpoint-down(sm) {
+      top: 64px; // Set this with navbar height on mobile
+      background: $black; // Set this with background on mobile
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+// Add custom styles here
+
+

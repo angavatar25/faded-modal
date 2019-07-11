@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Cork n Screw 
+   Updated 3rd may 2018
+   ========================================================================== */
+.cover-corknscrew {
+	overflow-x: hidden;
+}
+.cover-corknscrew-home .cover-wrapper {width: 100%;}
+.cover-corknscrew .cover-wrapper {width: 100%;}
+.text-wrapper {
+	width: 550px;
+	background: linear-gradient(rgba(255,255,255, .7), rgba(255,255,255, .7));
+	padding: 2rem;
+	transition: all 0.5s;
+}
+
+.text-wrapper-event {
+	width: 350px;}
+
+.text-wrapper-press {
+	width: 600px;}
+
+.text-wrapper p {
+	font-family: Times, Helvetica, serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+.text-wrapper-heading {
+	font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.text-wrapper-date {
+	letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-top: 1px solid #ca4c17;
+  border-bottom: 1px solid #ca4c17;
+  color: #ca4c17;
+  padding: 10px 0 7px;
+  margin-bottom: 20px;
+}
+
+.text-wrapper-scroll {
+	height: 13rem;
+	overflow-y: scroll;
+}
+.text-wrapper-scroll::-webkit-scrollbar {
+    width: 1px;
+}
+ 
+.text-wrapper-scroll::-webkit-scrollbar-track {
+    background: #ccc;
+}
+ 
+.text-wrapper-scroll::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+.text-wrapper-scroll::-webkit-scrollbar-thumb:window-inactive {
+    background: #333; 
+}
+
+@media(max-width: 990px){
+	.text-wrapper {width: 400px;}
+}
+@media(max-width: 767px){
+	.text-wrapper {width: 300px;}
+}
+@media(max-width: 567px){
+	.text-wrapper {width: 279px;}
+}
+
+/* ==========================================================================
+   Cover Gallery
+   ========================================================================== */
+   .cover-gallery {}
+
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar-absolute-top {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 2rem;
+  z-index: 1030;
+}
+.navbar-corknscrew .navbar-brand img {
+	height: 90px;
+	margin-top: 3rem;
+	transition: all 0.5s ease-in;
+}
+/*.navbar-corknscrew .navbar-nav-left {margin-right: 10px;}
+.navbar-corknscrew .navbar-nav-right {margin-left: 90px;}*/
+
+@media(max-width: 567px){
+	.navbar-absolute-top {top: 1rem;}
+	.navbar-corknscrew .navbar-brand img {
+		margin-top: 1rem;
+		height: 60px;
+	}
+}
+
+
+/* ==========================================================================
+   Wine & Social Media
+   ========================================================================== */
+.wine-home {
+	position: absolute;
+	left: 5rem;
+	top: 15rem;
+	transition: all 0.5s;
+}
+.wine-home img {
+	width: 60px;
+	height: auto;
+}
+
+.cover-corknscrew .cover-wrapper .wine-home {
+	left: calc(100% - 13rem);}
+
+	@media(max-width: 767px){
+		.cover-corknscrew .cover-wrapper .wine-home {
+			left: calc(100% - 5rem);
+			top: 13rem;}
+		.socmed {
+			top: 22rem !important;
+			right: 2rem !important;
+		}
+	}
+
+.socmed {
+	position: absolute;
+	right: 5rem;
+	top: 15rem;
+	background: linear-gradient(rgba(0,0,0, .25), rgba(0,0,0, .25));
+  padding: 10px;
+  transition: all 0.5s;
+}
+.socmed a {
+	display: block;}
+.socmed a img {
+	height: 20px;
+	width: 20px;
+	margin-bottom: 1rem;}
+
+/* ==========================================================================
+   Button
+   ========================================================================== */
+   .btn-outline-black {
+   	border: 1px solid #333;
+   	background-color: transparent;
+   	color: #333;
+   }
+
+   .btn-outline-black:hover {
+   	background-color: #333;
+   	color: #fff;
+   }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+p.footer {
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	color: rgba(255,255,255,0.75);
+}
+p.footer img {margin-bottom: 10px;}
+
+@media(max-width: 576px){
+	p.footer img {width: 250px;}
+}
+
+/* ==========================================================================
+   Helper
+   ========================================================================== */
+   .pl-4px {padding-left: 4px !important;}
+   .pr-4px {padding-right: 4px !important;}

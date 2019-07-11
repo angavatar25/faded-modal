@@ -1,0 +1,448 @@
+/* Splitting Word Animation
+-------------------------------------------------- */
+.split-text {
+  position: absolute;
+  width: 450px;
+  left: 50%;
+  margin-left: -225px;
+  height: 40px;
+  top: 50%;
+  margin-top: -20px;
+}
+.split-word {
+  position: absolute;
+  opacity: 0;
+}
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* Random Text Animation
+-------------------------------------------------- */
+.animates {
+  -webkit-animation-duration: 1s !important;
+  animation-duration: 1s !important;
+  -webkit-animation-fill-mode: both !important;
+  animation-fill-mode: both !important;
+}
+.animates.infinite {
+  -webkit-animation-iteration-count: infinite !important;
+  animation-iteration-count: infinite !important;
+}
+
+.tracking-in-contract-bck {
+  animation: tracking-in-contract-bck;
+}
+@-webkit-keyframes tracking-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(400px);transform:translateZ(400px);opacity:0}40%{opacity:.6}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes tracking-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(400px);transform:translateZ(400px);opacity:0}40%{opacity:.6}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+.text-shadow-pop-br {
+  animation: txt-shadow-pop-br;
+}
+@-webkit-keyframes txt-shadow-pop-br{0%{text-shadow:0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555;-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}100%{text-shadow:1px 1px #555,2px 2px #555,3px 3px #555,4px 4px #555,5px 5px #555,6px 6px #555,7px 7px #555,8px 8px #555;-webkit-transform:translateX(-8px) translateY(-8px);transform:translateX(-8px) translateY(-8px)}}@keyframes text-shadow-pop-br{0%{text-shadow:0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555;-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}100%{text-shadow:1px 1px #555,2px 2px #555,3px 3px #555,4px 4px #555,5px 5px #555,6px 6px #555,7px 7px #555,8px 8px #555;-webkit-transform:translateX(-8px) translateY(-8px);transform:translateX(-8px) translateY(-8px)}}
+
+.text-shadow-pop-right {
+  animation: txt-shadow-pop-right;
+}
+@-webkit-keyframes txt-shadow-pop-right{0%{text-shadow:0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555;-webkit-transform:translateX(0);transform:translateX(0)}100%{text-shadow:1px 0 #555,2px 0 #555,3px 0 #555,4px 0 #555,5px 0 #555,6px 0 #555,7px 0 #555,8px 0 #555;-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@keyframes text-shadow-pop-right{0%{text-shadow:0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555,0 0 #555;-webkit-transform:translateX(0);transform:translateX(0)}100%{text-shadow:1px 0 #555,2px 0 #555,3px 0 #555,4px 0 #555,5px 0 #555,6px 0 #555,7px 0 #555,8px 0 #555;-webkit-transform:translateX(-8px);transform:translateX(-8px)}}
+
+
+.focus-in-expand {
+  animation: focus-in-expand;
+}
+@-webkit-keyframes focus-in-expand{0%{letter-spacing:-.5em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-expand{0%{letter-spacing:-.5em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+
+.focus-in-contract {
+  animation: focus-in-contract;
+}
+@-webkit-keyframes focus-in-contract{0%{letter-spacing:1em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-contract{0%{letter-spacing:1em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+
+.text-pop-up-top {
+  animation: text-pop-up-top;
+}
+@-webkit-keyframes text-pop-up-top{0%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;text-shadow:none}100%{-webkit-transform:translateY(-50px);transform:translateY(-50px);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;text-shadow:0 1px 0 #ccc,0 2px 0 #ccc,0 3px 0 #ccc,0 4px 0 #ccc,0 5px 0 #ccc,0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 50px 30px rgba(0,0,0,.3)}}@keyframes text-pop-up-top{0%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;text-shadow:none}100%{-webkit-transform:translateY(-50px);transform:translateY(-50px);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;text-shadow:0 1px 0 #ccc,0 2px 0 #ccc,0 3px 0 #ccc,0 4px 0 #ccc,0 5px 0 #ccc,0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 50px 30px rgba(0,0,0,.3)}}
+
+.scale-up-hor-left {
+  -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-hor-left{0%{-webkit-transform:scaleX(.4);transform:scaleX(.4);-webkit-transform-origin:0 0;transform-origin:0 0}100%{-webkit-transform:scaleX(1);transform:scaleX(1);-webkit-transform-origin:0 0;transform-origin:0 0}}@keyframes scale-up-hor-left{0%{-webkit-transform:scaleX(.4);transform:scaleX(.4);-webkit-transform-origin:0 0;transform-origin:0 0}100%{-webkit-transform:scaleX(1);transform:scaleX(1);-webkit-transform-origin:0 0;transform-origin:0 0}}
+
+.img-width-container {
+  width: 0px;
+  height: 400px;
+  overflow: hidden;
+}
+.img-width-container-full {
+  width: 100%;
+   -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
+
+/* ==========================================================================
+   Animated Button
+   ========================================================================== */
+.btn-animated1 {
+  background-color: #000;
+  color: #FFF;
+  border: none;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  position: relative;
+
+  &:hover {
+    background: transparent;
+    color: #000 !important;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 100%;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 0px;
+    height: 2px;
+    background: #000;
+    transition: all 0.4s ease;
+  }
+
+  &:after {
+    top: inherit;
+    left: inherit;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.btn-animated2 {
+  color: #000 !important;
+  position: relative;
+  border: 1px solid #000;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+
+  &:before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    color: #fff !important;
+    background: #000;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+  &:hover {
+    color: #fff !important;
+    background-color: transparent;
+    text-shadow: none;}
+
+  &:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;}  
+}
+
+.btn-animated3 {
+  color: #000 !important;
+  position: relative;
+  border: 1px solid #000;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+
+  &:before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    color: #fff !important;
+    background: #000;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background-color: transparent;
+    text-shadow: none;
+  }
+
+  &:hover:before {
+    top: 0%;
+    bottom: auto;
+    height: 100%;
+  }
+}
+
+.btn-animated4 {
+  color: #000 !important;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #000;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: #fff !important;
+    background: #000;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  &:hover {
+    color: #fff !important;
+    background-color: transparent;
+    text-shadow: nthree;
+  }
+
+  &:hover:before {
+    left: 0%;
+    right: auto;
+    width: 100%;
+  }
+}
+
+.btn-animated5 {
+  color: #000 !important;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #000;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: #fff !important;
+    background: #000;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  &:hover {
+    color: #fff !important;
+    background-color: transparent;
+    text-shadow: nfour;
+  }
+
+  &:hover:before {
+    right: 0%;
+    left: auto;
+    width: 100%;
+  }
+}
+
+.btn-animated6 {
+  color: #000 !important;
+  border: 1px solid #000;
+  position: relative;
+  
+  &:hover{
+    animation-name: change-background;
+    animation-duration: .4s;
+    -webkit-animation-delay: .4s; /* Chrome, Safari, Opera */
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+  }
+  
+  &:before{
+    position: absolute;
+    content:"";
+    width: 10px;
+    height: 2px;
+    left:0;
+    top:22px;
+    background-color: #000;
+    animation-name: right-to-left;
+    animation-duration: .3s;
+  }
+
+  &:hover:before{
+    animation-name: left-to-right;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+  }
+
+  @-webkit-keyframes change-background {
+    0%   { background: transparent;}
+    100% { background: #000; color: #FFF;}
+  }
+
+  @-webkit-keyframes right-to-left {
+    0%    { width: 100%;}
+    50%   { width: 100%; right: 0;}
+    100%  { width: 10px; left:0; right: auto;}
+  }
+
+  @-webkit-keyframes left-to-right {
+    0%    { width: 10px;}
+    50%   { width: 100%; left: 0;}
+    100%  { width: 10px; right:0; left: auto;}
+  }
+}
+
+.btn-animated7 {
+  color: #000 !important;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+
+  .slider {
+    background: #000;
+    width: 122px;
+    height: 40px;
+    position: absolute;
+    display: block;
+    z-index: 0;
+    transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+    left: -200px;
+    top: 0;
+    -webkit-transition: transform 0.3;
+    transition: transform 0.3;
+    transition-duration: .2s;
+    -webkit-transition-duration: .5s;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;}
+
+  &:hover > .slider {
+    transform: translateX(190px);
+    -webkit-transform: translateX(190px);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    transition-duration: .4s;
+    -webkit-transition-duration: .4s;
+  }
+
+  &:hover span {
+    color: #FFF;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+  }
+}
+
+.btn-animated8,
+.btn-animated9 {
+  color: #000 !important;
+  border: 1px solid #000;
+}
+
+
+/* ==========================================================================
+    Progress Button
+   ========================================================================== */
+      .btn-progress {
+        position: relative;
+      }
+      .inner {
+        transition: opacity 0.3s ease;
+        width: 100%;
+        height: 4px;
+        background-color: #fff ; /*#16a085*/
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        
+      }  
+
+      .inner3 {
+        transition: opacity 0.3s ease;
+        width: 100%;
+        height: 40px;
+        background-color: #fff ; /*#16a085*/
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        opacity: 0;}  
+      .inner.active,
+      .inner3.active  {
+          opacity: 1;
+          animation: progressAnimation 3s ease;
+        }
+      .inner.done span,
+      .inner3.done span {
+        opacity: 1;
+        margin-top: -9px;
+      }
+      @keyframes progressAnimation {
+        0%   { width: 0; }
+        20%  { width: 5%; }
+        40%  { width: 20%; }
+        60%  { width: 70%; }
+        80%  { width: 75%; }
+        100% { width: 100%; }
+      }
+      @-webkit-keyframes progressAnimation {
+        0%   { width: 0; }
+        20%  { width: 5%; }
+        40%  { width: 20%; }
+        60%  { width: 70%; }
+        80%  { width: 75%; }
+        100% { width: 100%; }
+      }
+      @-moz-keyframes progressAnimation {
+        0%   { width: 0; }
+        20%  { width: 5%; }
+        40%  { width: 20%; }
+        60%  { width: 70%; }
+        80%  { width: 75%; }
+        100% { width: 100%; }
+      }
+      @-o-keyframes progressAnimation {
+        0%   { width: 0; }
+        20%  { width: 5%; }
+        40%  { width: 20%; }
+        60%  { width: 70%; }
+        80%  { width: 75%; }
+        100% { width: 100%; }
+      }
+      @keyframes progressAnimation {
+        0%   { width: 0; }
+        20%  { width: 5%; }
+        40%  { width: 20%; }
+        60%  { width: 70%; }
+        80%  { width: 75%; }
+        100% { width: 100%; }
+      }
+
+

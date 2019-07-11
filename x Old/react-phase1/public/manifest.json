@@ -1,0 +1,15 @@
+{
+  "short_name": "Anti Admin",
+  "name": "Manage your WEBSite",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#5cb85c",
+  "background_color": "#ffffff"
+}

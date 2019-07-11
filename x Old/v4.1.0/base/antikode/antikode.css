@@ -1,0 +1,497 @@
+body,
+h1 {
+	font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar-absolute-top {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-antikode {
+  padding: 20px 0 0 0;
+}
+.navbar-antikode .navbar-brand img {
+  width: 150px; height: auto;}
+.navbar-antikode .navbar-nav .nav-link {
+  color: #fff; font-size: .9rem;}
+.navbar-antikode .navbar-nav .nav-link:hover {
+  color: #e0c6a9;}
+
+.navbar-antikode.scroll-trigger {
+  background: rgba(0,24,33,.9);
+  padding: 20px 0;
+}
+
+@media(max-width: 576px){
+  .navbar-antikode .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .navbar-antikode.scroll-trigger {
+    padding: 10px 0;}
+}
+/* ==========================================================================
+   Cover
+   ========================================================================== */
+
+.cover { color: #fff; }
+
+.cover .cover-wrapper {
+	-webkit-box-shadow:inset 0 0 0 1px #e8d5c0;
+	box-shadow:inset 0 0 0 1px #e8d5c0;
+}
+
+.cover-wrapper .container {
+	height: calc(100vh - 18px);
+}
+
+.cover h1 {
+	font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-weight: 200;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Font
+   ========================================================================== */
+.heading-title {
+	font-size: 2rem;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.bg-dark {background: #001821;}
+.bg-light {background: #fff;}
+.bg-light-grey {background: #f9f9f9;}
+
+/* ==========================================================================
+   Visible / hidden
+   ========================================================================== */
+@media(max-width: 767px){
+  .hidden-md-down {
+    display: none;
+  }
+}
+
+@media(max-width: 576px){
+  .hidden-sm-down {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Scroll Hint (Arrow Down)
+   ========================================================================== */
+
+.scroll-hint {
+  position: absolute;
+  display: block;
+  height: 75px;
+  width: 200px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+.scroll-hint img {
+  display: block;
+  position: absolute;
+  width: 50px;
+  left: 50%;
+  margin-left: -25px;
+  bottom: 0px;
+  display: inline-block;
+  -webkit-animation: arrow_move 1s linear;
+  -moz-animation: arrow_move 1s linear;
+  animation: arrow_move 1s linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.scroll-hint .scroll-hint-text {
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  font-weight: 200;
+  margin-top: 55px;
+  transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;
+  -o-transition: color .25s ease-in-out;
+}
+.scroll-hint:hover .scroll-hint-text {
+  color: rgba(255,255,255,.75);
+}
+@media (min-width: 768px) {
+  .scroll-hint {
+    bottom: 30px;
+  }
+}
+@-webkit-keyframes arrow_move {
+  0% {opacity: 1; bottom: 100px; }
+  50% {opacity: 0; bottom: 96px; }
+  90% {opacity: 0; bottom: 100px; }
+  100% {opacity: 1; bottom: 100px; }
+}
+@-moz-keyframes arrow_move {
+  0% {opacity: 1; bottom: 48px; }
+  50% {opacity: 0; bottom: 24px; }
+  90% {opacity: 0; bottom: 48px; }
+  100% {opacity: 1; bottom: 48px; }
+}
+@-o-keyframes arrow_move {
+  0% {opacity: 1; bottom: 48px; }
+  50% {opacity: 0; bottom: 24px; }
+  90% {opacity: 0; bottom: 48px; }
+  100% {opacity: 1; bottom: 48px; }
+}
+@keyframes arrow_move {
+  0% {opacity: 1; bottom: 48px; }
+  50% {opacity: 0; bottom: 24px; }
+  90% {opacity: 0; bottom: 48px; }
+  100% {opacity: 1; bottom: 48px; }
+}
+
+
+/* ==========================================================================
+   Home about
+   ========================================================================== */
+
+.home-about .heading-title {
+	color: #cba67d;
+}
+
+.home-about .heading {
+	margin-bottom: 2rem;
+}
+
+.home-about .home-about-img {
+	margin-top: 3rem;
+}
+
+/* ==========================================================================
+   Home service
+   ========================================================================== */
+
+.service-item {
+	height: 300px;
+	padding: 9px;
+	margin-bottom: 10px;
+}
+
+.service-item-wrapper {
+	-webkit-box-shadow:inset 0 0 0 1px #e8d5c0;
+	box-shadow:inset 0 0 0 1px #e8d5c0;
+	/*height: calc(500px - 18px);*/
+	height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.service-item img {
+	width: 110px;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.service-item h3 {
+	color: #fff;
+  text-align: center;
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+
+@media(max-width: 576px){
+	.home-service .heading-title {text-align: center;}
+}
+
+@media(min-width: 576px){
+	.service-item { height: 500px; }
+}
+
+
+/* ==========================================================================
+   cover portfolio
+   ========================================================================== */
+
+.cover-portfolio {background-color: #eceeef;}
+.cover-portfolio h1 {
+	font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-weight: 200;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   section portfolio
+   ========================================================================== */
+
+.section-portfolio,
+.section-portfolio-list { 
+  background-color: #001821;}
+.section-portfolio .container {
+  margin-top: -9rem;}
+.section-portfolio-list .container {
+  margin-top: -15rem;}
+.section-portfolio .portfolio-wrapper,
+.section-portfolio-list .portfolio-wrapper {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+  margin-bottom: 1.5rem;
+}
+.section-portfolio .portfolio-detail,
+.section-portfolio-list .portfolio-detail {
+  background: rgba(0,0,0,.35);
+  height: 100%;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+.section-portfolio .portfolio-item-desc-title span,
+.section-portfolio-list .portfolio-item-desc-title span {
+  font-size: .6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.section-portfolio .portfolio-item-desc-title h3,
+.section-portfolio-list .portfolio-item-desc-title h3 {
+  color: #fff;
+  font-size: .9rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+.section-portfolio .portfolio-item-desc-tags,
+.section-portfolio-list .portfolio-item-desc-tags {
+  color: rgba(255,255,255,.2);
+  font-size: .6rem;
+}
+
+@media(min-width: 992px){
+  .section-portfolio .portfolio-item-desc-title,
+  .section-portfolio-list .portfolio-item-desc-title {
+    margin-bottom: .5rem;
+  }
+  .section-portfolio .portfolio-item-desc-tags,
+  .section-portfolio-list .portfolio-item-desc-tags {
+    position: absolute;
+    bottom: 1.25rem;
+  }
+}
+
+@media(max-width: 767px){
+  .section-portfolio .container {margin-top: -5rem;}
+}
+
+/* ==========================================================================
+   section blog
+   ========================================================================== */
+.section-blog { 
+  background-color: #001821;}
+.section-blog .container {
+  margin-top: -15rem;}
+.section-blog h3.card-title {
+  font-size: 1.5rem;
+  color: #333;}
+
+
+/* ==========================================================================
+   section article
+   ========================================================================== */
+.section-article h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;}
+
+
+/* ==========================================================================
+   section career
+   ========================================================================== */
+.section-career {
+  background-color: #001821;}
+.section-career .container {
+  margin-top: -15rem;}
+
+.section-career .career-content-text span,
+.section-career .career-content-text a {
+  font-weight: 600;
+  color: #fff;
+}
+.section-career p {
+  color: rgba(255,255,255,.5);
+  margin-bottom: 2rem;
+}
+.section-career .career-wrapper {
+  background-color: #fff;
+  color: #000;
+  padding: 1.5rem;
+  height: 125px;
+  margin-bottom: 1rem;
+}
+.career-wrapper h3 {font-size: 1.5rem;}
+.career-wrapper h3 .fa-angle-right {
+  color: #e0c6a9;
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: .15rem;
+  transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+}
+.career-wrapper:hover .fa-angle-right {
+  margin-left: 0.50rem;}
+.career-wrapper p {
+  color: #999;
+  margin-bottom: 0;
+  font-size: .8rem;}
+.text-black {color: #000 !important;}
+
+@media(max-width: 1200px){
+  .career-wrapper h3 {font-size: 1rem;}
+}
+@media(max-width: 756px){
+  .section-career .career-wrapper {
+    height: 91px;
+    padding: 1rem;}
+  .career-wrapper h3 {font-size: 0.9rem;}
+}
+
+/* ==========================================================================
+   section contact us
+   ========================================================================== */
+.section-contact {
+  background-color: #001822; margin-top: -15rem;}
+/*.section-contact .container {
+  margin-top: -15rem;}*/
+.section-contact p {
+  color: rgba(255,255,255,.5);
+  margin-bottom: 2rem;
+}
+.section-contact .contact-content-text img{
+  padding: 1px 2px 4px;
+  width: 20px;
+}
+.section-contact .contact-content-text span,
+.section-contact .contact-content-text a {
+  font-weight: 600;
+  color: #fff;
+}
+.section-contact .contact-box {
+  background-color: #001118;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.contact-box .form-group input,
+.contact-box .form-group textarea {
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  color: #fff;
+}
+
+.contact-box .form-group .form-control:focus input,
+ {
+  background-color: transparent !important;
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+.contact-box .form-control:focus {
+  box-shadow: none !important;}
+
+.contact-box .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #414d52;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  background: rgba(0,24,33,1);
+  font-size: .875rem;
+  color: rgba(255,255,255,.7);
+}
+footer h4 {
+  color: #fff;
+  margin-top: 0;
+  font-size: 1.125rem;
+}
+footer a {
+  color: rgba(255,255,255,.7);
+}
+footer a:focus,
+footer a:hover {
+  color: #e0c6a9;
+}
+
+.footer-top {
+  padding: 2.5rem 0;
+}
+
+.footer-top ul {list-style-type: none; margin: 0; padding: 0;}
+
+.footer-about {
+  overflow: hidden;
+  position: relative;
+}
+.footer-about .about-us-footer {
+  float: left;
+  margin-left: 3rem;
+  margin-top: -5rem;
+}
+.footer-about img {
+  float: left;
+  margin-right: 2rem;
+  height: 110px;
+  margin-top: .3rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 10px;
+  font-size: 12px;
+}
+.footer-bottom p {
+  color: rgba(255,255,255,.7)
+}
+
+/* ==========================================================================
+   Additional
+   ========================================================================== */
+
+/* ==========================================================================
+   text truncate multiline
+   ========================================================================== */
+.text-truncate-multiline {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+}
+
+.text-truncate-twoline {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+}

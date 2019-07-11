@@ -1,0 +1,156 @@
+/*
+ * Antikode main.scss
+ * Version - 1.1.1
+ *
+ * Copyright (c) 2018 Antikode
+ */
+
+/* ==========================================================================
+   Import
+   ========================================================================== */
+
+/* Required
+-------------------------------------------------- */
+@import "../plugins/bootstrap-4.1.3/scss/functions";
+@import "variables-custom"; // Custom variables
+@import "../plugins/bootstrap-4.1.3/scss/variables";
+@import "../plugins/bootstrap-4.1.3/scss/mixins";
+
+/* Optional
+-------------------------------------------------- */
+@import "../plugins/bootstrap-4.1.3/scss/root";
+@import "../plugins/bootstrap-4.1.3/scss/reboot";
+@import "../plugins/bootstrap-4.1.3/scss/type";
+@import "../plugins/bootstrap-4.1.3/scss/images";
+@import "../plugins/bootstrap-4.1.3/scss/code";
+@import "../plugins/bootstrap-4.1.3/scss/grid";
+@import "../plugins/bootstrap-4.1.3/scss/tables";
+@import "../plugins/bootstrap-4.1.3/scss/forms";
+@import "../plugins/bootstrap-4.1.3/scss/buttons";
+@import "../plugins/bootstrap-4.1.3/scss/transitions";
+@import "../plugins/bootstrap-4.1.3/scss/dropdown";
+@import "../plugins/bootstrap-4.1.3/scss/button-group";
+@import "../plugins/bootstrap-4.1.3/scss/input-group";
+@import "../plugins/bootstrap-4.1.3/scss/custom-forms";
+@import "../plugins/bootstrap-4.1.3/scss/nav";
+@import "../plugins/bootstrap-4.1.3/scss/navbar";
+@import "../plugins/bootstrap-4.1.3/scss/card";
+@import "../plugins/bootstrap-4.1.3/scss/breadcrumb";
+@import "../plugins/bootstrap-4.1.3/scss/pagination";
+@import "../plugins/bootstrap-4.1.3/scss/badge";
+@import "../plugins/bootstrap-4.1.3/scss/jumbotron";
+@import "../plugins/bootstrap-4.1.3/scss/alert";
+@import "../plugins/bootstrap-4.1.3/scss/progress";
+@import "../plugins/bootstrap-4.1.3/scss/media";
+@import "../plugins/bootstrap-4.1.3/scss/list-group";
+@import "../plugins/bootstrap-4.1.3/scss/close";
+@import "../plugins/bootstrap-4.1.3/scss/modal";
+@import "../plugins/bootstrap-4.1.3/scss/tooltip";
+@import "../plugins/bootstrap-4.1.3/scss/popover";
+@import "../plugins/bootstrap-4.1.3/scss/carousel";
+@import "../plugins/bootstrap-4.1.3/scss/utilities";
+@import "../plugins/bootstrap-4.1.3/scss/print";
+
+/* Additional Custom SASS
+-------------------------------------------------- */
+@import "mixins-andy"; // Andy.scss (modified)
+@import "mixins-custom"; // Custom mixins & utilities classes
+@import "utilities-custom"; // Custom mixins & utilities classes
+@import "components-custom"; // Custom components classes
+
+/* Optional Library Plugins
+-------------------------------------------------- */
+/// Font Awesome 5
+// For general font icons
+@import "../plugins/fontawesome-5.5.0/css/all.min.css"; 
+
+/// jQuery UI
+// Has dependency on script.php
+@import "../plugins/jquery-ui-1.12.1/jquery-ui.min.css";
+
+/// Animate CSS
+// For main animations
+@import "../plugins/animate-css-3.6.0/animate.min.css"; 
+
+/// Fancy Box
+// For lightbox
+// Has dependency on script.php
+@import "../plugins/fancybox-3.3.5/jquery.fancybox.min.css";
+
+/// Owl Carousel CSS
+// For advanced carousel
+// Some has dependency on script.php
+@import "../plugins/owl-carousel-2.2.1/owl.carousel.css";
+@import "../plugins/owl-carousel-2.2.1/owl.theme.default.min.css";
+
+/// Slick Slider
+// For advanced slider
+// Has dependency on script.php
+@import "../plugins/slick-1.8.1/slick.scss";
+@import "../plugins/slick-1.8.1/slick-theme.scss";
+
+/// Select2
+// For custom select 
+// Has dependency on script.php
+@import "../plugins/select2-4.0.6/select2.min.css"; 
+
+/// DataTables
+// For advanced table
+// Has dependency on script.php
+@import "../plugins/datatables-1.10.16/datatables.min.css"; 
+
+/// Progress Button
+// For button progress animation
+// Has dependency on script.php
+@import "../plugins/progressbutton-1.0.0/component.css";
+
+/// Antikode Custom CSS
+// For component based CSS customized by the author
+// Some has dependency on script.php
+// @import "../plugins/antikode-custom-1.0.0/animate.scss";
+
+/// Icomoon
+// For custom icon fonts
+// @import "../plugins/icomoon/style.scss";
+
+
+/* ========================================================================================================================================
+   Common Components
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+/* Custom Fonts
+-------------------------------------------------- */
+@include font-face('Proxima Nova', 'Proxima Nova Light', 200);
+@include font-face('Proxima Nova', 'Proxima Nova Regular', 400);
+@include font-face('Proxima Nova', 'Proxima Nova Semibold', 600);
+
+@include font-face('Playfair Display', 'PlayfairDisplay-Regular', 400);
+@include font-face('Playfair Display', 'PlayfairDisplay-Bold', 700);
+@include font-face('Playfair Display', 'PlayfairDisplay-Black', 900);
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* General
+-------------------------------------------------- */
+.btn-primary {
+	color: $white;
+	&:hover, &:focus, &:active {
+		color: $white;
+	}
+}
+
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+// Add custom styles here
+
+

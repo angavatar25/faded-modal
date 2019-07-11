@@ -1,0 +1,954 @@
+/* ========================================================================================================================================
+   jQuery UI 1.12.1 Overriders (Author's Version of Normalization)
+   ========================================================================================================================================= */
+
+/* Image Path
+-------------------------------------------------- */
+.ui-icon {width: 16px; height: 16px; }
+.ui-icon, .ui-widget-content .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_444444_256x240.png"); }
+.ui-widget-header .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_444444_256x240.png"); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_555555_256x240.png"); }
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_ffffff_256x240.png"); }
+.ui-state-highlight .ui-icon, .ui-button .ui-state-highlight.ui-icon {background-image: url("../../assets/img/plugins/ui-icons_777620_256x240.png"); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_cc0000_256x240.png"); }
+.ui-button .ui-icon {background-image: url("../../assets/img/plugins/ui-icons_777777_256x240.png"); }
+
+
+/* ========================================================================================================================================
+   Bootstrap 3.3.7 Overriders (Author's Version of Normalization)
+   ========================================================================================================================================= */
+
+/* Default Row
+-------------------------------------------------- */
+.row {
+  margin-right: -10px; /* Originally 15 */
+  margin-left: -10px; /* Originally 15 */
+}
+.row > [class^="col"] {
+  padding-right: 10px; /* Originally 15 */
+  padding-left: 10px; /* Originally 15 */
+}
+
+/* Row / Col Variations
+-------------------------------------------------- */
+.row-n {margin-right: 0px; margin-left: 0px; }
+.row-n > [class^="col"] {padding-right: 0px; padding-left: 0px; }
+
+.row-5 {margin-right: -5px; margin-left: -5px; }
+.row-5 > [class^="col"] {padding-right: 5px; padding-left: 5px; }
+
+.row-10 {margin-right: -10px; margin-left: -10px; }
+.row-10 > [class^="col"] {padding-right: 10px; padding-left: 10px; }
+
+.row-15 {margin-right: -15px; margin-left: -15px; }
+.row-15 > [class^="col"] {padding-right: 15px; padding-left: 15px; }
+
+.row-20 {margin-right: -20px; margin-left: -20px; }
+.row-20 > [class^="col"] {padding-right: 20px; padding-left: 20px; }
+
+.row-25 {margin-right: -25px; margin-left: -25px; }
+.row-25 > [class^="col"] {padding-right: 25px; padding-left: 25px; }
+
+.row-30 {margin-right: -30px; margin-left: -30px; }
+.row-30 > [class^="col"] {padding-right: 30px; padding-left: 30px; }
+
+/* Global Overriders
+-------------------------------------------------- */
+a {
+  color: #999;
+  transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;
+  -o-transition: color .25s ease-in-out;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  color: #333;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+/*input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+  outline-offset: -2px;
+}
+textarea {
+  resize: none;
+}
+label {
+  font-weight: normal;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+.img {
+  background: #f0f0f0 url(../../assets/img/loading.gif) center no-repeat;
+}*/
+
+/* Color
+-------------------------------------------------- */
+.cl-white {color: #fff;}
+
+
+/* Media Query Killer (Make sure setting max-width in Bootstrap.css as none !important)
+---------------------------------------------------------------------------------------- */
+/*.container {
+  width: 970px;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}*/
+
+/* ========================================================================================================================================
+   Bootstrap 4.0.0 Alpha 6 Classes
+   ========================================================================================================================================= */
+
+/* Img Responsive
+-------------------------------------------------- */
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Img Responsive
+-------------------------------------------------- */
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ========================================================================================================================================
+   Chrome Frame Support
+   ========================================================================================================================================= */
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+/* ========================================================================================================================================
+   Helper Class
+   ========================================================================================================================================= */
+
+/* Animated
+-------------------------------------------------- */
+.animated {
+  opacity: 0;
+}
+
+/* Delays
+-------------------------------------------------- */
+.delayp1 {animation-delay: .1s; -moz-animation-delay: .1s; -webkit-animation-delay: .1s; -o-animation-delay: .1s; transition-delay: .1s; -webkit-transition-delay: .1s; -moz-transition-delay: .1s; -o-transition-delay: .1s; }
+.delayp2 {animation-delay: .2s; -moz-animation-delay: .2s; -webkit-animation-delay: .2s; -o-animation-delay: .2s; transition-delay: .2s; -webkit-transition-delay: .2s; -moz-transition-delay: .2s; -o-transition-delay: .2s; }
+.delayp3 {animation-delay: .3s; -moz-animation-delay: .3s; -webkit-animation-delay: .3s; -o-animation-delay: .3s; transition-delay: .3s; -webkit-transition-delay: .3s; -moz-transition-delay: .3s; -o-transition-delay: .3s; }
+.delayp4 {animation-delay: .4s; -moz-animation-delay: .4s; -webkit-animation-delay: .4s; -o-animation-delay: .4s; transition-delay: .4s; -webkit-transition-delay: .4s; -moz-transition-delay: .4s; -o-transition-delay: .4s; }
+.delayp5 {animation-delay: .5s; -moz-animation-delay: .5s; -webkit-animation-delay: .5s; -o-animation-delay: .5s; transition-delay: .5s; -webkit-transition-delay: .5s; -moz-transition-delay: .5s; -o-transition-delay: .5s; }
+.delayp6 {animation-delay: .6s; -moz-animation-delay: .6s; -webkit-animation-delay: .6s; -o-animation-delay: .6s; transition-delay: .6s; -webkit-transition-delay: .6s; -moz-transition-delay: .6s; -o-transition-delay: .6s; }
+.delayp7 {animation-delay: .7s; -moz-animation-delay: .7s; -webkit-animation-delay: .7s; -o-animation-delay: .7s; transition-delay: .7s; -webkit-transition-delay: .7s; -moz-transition-delay: .7s; -o-transition-delay: .7s; }
+.delayp8 {animation-delay: .8s; -moz-animation-delay: .8s; -webkit-animation-delay: .8s; -o-animation-delay: .8s; transition-delay: .8s; -webkit-transition-delay: .8s; -moz-transition-delay: .8s; -o-transition-delay: .8s; }
+.delayp9 {animation-delay: .9s; -moz-animation-delay: .9s; -webkit-animation-delay: .9s; -o-animation-delay: .9s; transition-delay: .9s; -webkit-transition-delay: .9s; -moz-transition-delay: .9s; -o-transition-delay: .9s; }
+.delayp10, .delay1s {animation-delay: 1s; -moz-animation-delay: 1s; -webkit-animation-delay: 1s; -o-animation-delay: 1s; transition-delay: 1s; -webkit-transition-delay: 1s; -moz-transition-delay: 1s; -o-transition-delay: 1s; }
+.delayp11 {animation-delay: 1.1s; -moz-animation-delay: 1.1s; -webkit-animation-delay: 1.1s; -o-animation-delay: 1.1s; transition-delay: 1.1s; -webkit-transition-delay: 1.1s; -moz-transition-delay: 1.1s; -o-transition-delay: 1.1s; }
+.delayp12 {animation-delay: 1.2s; -moz-animation-delay: 1.2s; -webkit-animation-delay: 1.2s; -o-animation-delay: 1.2s; transition-delay: 1.2s; -webkit-transition-delay: 1.2s; -moz-transition-delay: 1.2s; -o-transition-delay: 1.2s; }
+.delayp13 {animation-delay: 1.3s; -moz-animation-delay: 1.3s; -webkit-animation-delay: 1.3s; -o-animation-delay: 1.3s; transition-delay: 1.3s; -webkit-transition-delay: 1.3s; -moz-transition-delay: 1.3s; -o-transition-delay: 1.3s; }
+.delayp14 {animation-delay: 1.4s; -moz-animation-delay: 1.4s; -webkit-animation-delay: 1.4s; -o-animation-delay: 1.4s; transition-delay: 1.4s; -webkit-transition-delay: 1.4s; -moz-transition-delay: 1.4s; -o-transition-delay: 1.4s; }
+.delayp15 {animation-delay: 1.5s; -moz-animation-delay: 1.5s; -webkit-animation-delay: 1.5s; -o-animation-delay: 1.5s; transition-delay: 1.5s; -webkit-transition-delay: 1.5s; -moz-transition-delay: 1.5s; -o-transition-delay: 1.5s; }
+.delayp16 {animation-delay: 1.6s; -moz-animation-delay: 1.6s; -webkit-animation-delay: 1.6s; -o-animation-delay: 1.6s; transition-delay: 1.6s; -webkit-transition-delay: 1.6s; -moz-transition-delay: 1.6s; -o-transition-delay: 1.6s; }
+.delayp17 {animation-delay: 1.7s; -moz-animation-delay: 1.7s; -webkit-animation-delay: 1.7s; -o-animation-delay: 1.7s; transition-delay: 1.7s; -webkit-transition-delay: 1.7s; -moz-transition-delay: 1.7s; -o-transition-delay: 1.7s; }
+.delayp18 {animation-delay: 1.8s; -moz-animation-delay: 1.8s; -webkit-animation-delay: 1.8s; -o-animation-delay: 1.8s; transition-delay: 1.8s; -webkit-transition-delay: 1.8s; -moz-transition-delay: 1.8s; -o-transition-delay: 1.8s; }
+.delayp19 {animation-delay: 1.9s; -moz-animation-delay: 1.9s; -webkit-animation-delay: 1.9s; -o-animation-delay: 1.9s; transition-delay: 1.9s; -webkit-transition-delay: 1.9s; -moz-transition-delay: 1.9s; -o-transition-delay: 1.9s; }
+.delayp20, .delay2s {animation-delay: 2s; -moz-animation-delay: 2s; -webkit-animation-delay: 2s; -o-animation-delay: 2s; transition-delay: 2s; -webkit-transition-delay: 2s; -moz-transition-delay: 2s; -o-transition-delay: 2s; }
+
+
+/* Ellipsis
+-------------------------------------------------- */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Set div in the middle
+-------------------------------------------------- */
+.outer-center {
+  float: right;
+  right: 50%;
+  position: relative;
+}
+.inner-center {
+  float: right;
+  right: -50%;
+  position: relative;
+}
+
+/* Button Center
+-------------------------------------------------- */
+.btn-x-auto-150 {
+  margin: auto;
+  display: block !important;
+  width: 150px;
+}
+.btn-x-auto-250 {
+  margin: auto;
+  display: block !important;
+  width: 250px;
+}
+
+/* Image Replacement
+-------------------------------------------------- */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+
+/* Hide / Visible
+-------------------------------------------------- */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visible {
+  opacity: 1;
+}
+
+/* Viewport Animation
+-------------------------------------------------- */
+.vp-fadein, .vp-fadeinup, .vp-fadeinright, .vp-fadeindown, .vp-fadeinleft,  
+.vp-slideinup, .vp-slideinright, .vp-slideindown, .vp-slideinleft, 
+.vp-zoomin, .vp-zoomindown, .vp-rotatein {
+  opacity: 0;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+
+
+/* ========================================================================================================================================
+   Common Components
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+@media (max-width:768px) {
+  html {
+    overflow-x: hidden !important; 
+  }
+}
+body {
+  background: #fff url(../../assets/img/bg_cover-1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../assets/bg_cover-1.jpg',sizingMethod='scale')";
+  line-height: 1.6;
+  font-family: 'SF UI Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden !important;
+}
+
+.container, .container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+@media screen and (min-width: 768px) {
+  .container, .container-fluid {
+    padding-left: 15px; /* originally 15 */
+    padding-right: 15px; /* originally 15 */
+  }
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-left: -15px; /* originally 15 */
+    margin-right: -15px; /* originally 15 */
+  }
+}
+
+.container.container-md {
+  max-width: 1000px;
+}
+.container.container-sm {
+  max-width: 700px;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.section-main {
+  padding: 2.5rem 0;
+}
+@media (min-width: 768px) {
+  .section-main {
+    padding: 5rem 0;
+  }
+}
+
+
+/* ==========================================================================
+   Headings / Typography
+   ========================================================================== */
+
+.heading {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.heading-title {
+  /* Insert content here */
+}
+.heading-subtitle {
+  /* Insert content here */
+}
+.heading *:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* Btn General
+-------------------------------------------------- */
+.btn {
+  line-height: 1.25;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+}
+.btn:focus {
+  outline: none;
+  outline-offset: -2px;
+}
+.btn:hover,.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn:active,.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* Btn Primary
+-------------------------------------------------- */
+.btn-primary {
+  color: #ffffff;
+  background-color: #2d8cda;
+}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #1e74bb;
+}
+.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active {
+  background-color: #7eb3de;
+}
+
+/* Btn Default
+-------------------------------------------------- */
+.btn-default {
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #ebebeb;
+}
+.btn-default:hover,.btn-default:focus,.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #ddd;
+  border-color: #ddd;
+}
+.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled,.btn-default[disabled],fieldset[disabled] .btn-default,.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled:active,.btn-default[disabled]:active,fieldset[disabled] .btn-default:active,.btn-default.disabled.active,.btn-default[disabled].active,fieldset[disabled] .btn-default.active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #eee;
+}
+
+.btn-danger {
+  color: #e74a36;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-danger:hover,.btn-danger:focus,.btn-danger:active,.btn-danger.active,.open .dropdown-toggle.btn-danger {
+  color: #d22f1a;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-danger:active,.btn-danger.active,.open .dropdown-toggle.btn-danger {
+  background-image: none;
+}
+.btn-danger.disabled,.btn-danger[disabled],fieldset[disabled] .btn-danger,.btn-danger.disabled:hover,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger:hover,.btn-danger.disabled:focus,.btn-danger[disabled]:focus,fieldset[disabled] .btn-danger:focus,.btn-danger.disabled:active,.btn-danger[disabled]:active,fieldset[disabled] .btn-danger:active,.btn-danger.disabled.active,.btn-danger[disabled].active,fieldset[disabled] .btn-danger.active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #f1796a;
+}
+
+button.close,
+.btn.btn-primary:focus,
+.btn.btn-default:focus,
+.btn.btn-success:focus {
+  outline: none;
+}
+
+
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table {
+  margin-bottom: 5px;
+}
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  border-top: 1px solid #eee;
+}
+.table > tbody > tr > th, .table > tbody > tr > td {
+  border-top: none;
+  vertical-align: middle;
+}
+.table > tfoot > tr > th, .table > tfoot > tr > td {
+  border-top: 1px solid #eee;
+}
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.form-control {
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+.form-control:focus {
+  border-color: #999;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+select.form-control {
+  background: #eee url(../../assets/img/common/select-arrow.svg) no-repeat 100% 50%;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  cursor: default;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=40)";
+}
+.form-control::-moz-placeholder {
+  color: #b2b2b2;
+  opacity: 1;
+  font-weight: 200;
+}
+.form-control:-ms-input-placeholder {
+  color: #b2b2b2;
+  font-weight: 200;
+}
+.form-control::-webkit-input-placeholder {
+  color: #b2b2b2;
+  font-weight: 200;
+}
+.form-control.form-control-md {
+  font-size: 1.25em; /* 16 / 14 */
+  font-weight: 200;
+}
+.form-control.form-control-lg {
+  font-size: 1.42em; /* 20 / 14 */
+  font-weight: 200;
+}
+
+.form-group.underlined {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+.help-block {
+  margin-bottom: 0;
+  font-size: 11px;
+  color: #999;
+}
+.form-horizontal .form-group {
+  margin-right: -10px; /* same margin as container */
+  margin-left: -10px; /* same margin as container */
+} /* Styling is needed due to the default .form-horizontal .form-group default margin: -15px; */
+
+
+/* ==========================================================================
+   Alert
+   ========================================================================== */
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+  margin: 20px 0;
+  border-radius: 0px;
+  border-top: 1px solid #eee;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-right: 5px;
+  line-height: 1.42857143;
+  color: #999;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #333;
+  border-color: #333;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  color: #999;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+
+/* General
+-------------------------------------------------- */
+.modal-open { 
+  overflow: inherit; 
+  padding-right: inherit !important; 
+}
+.modal-dialog {
+  margin-top: 50px;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+     -moz-transition:    -moz-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, 0%);
+      -ms-transform: translate(0, 0%);
+          transform: translate(0, 0%);
+}
+.modal-content {
+  border-radius: 4px;
+  border: none;
+}
+.modal-header {
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 1rem;
+  top: .8rem;
+  transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+}
+
+
+/* ==========================================================================
+   Loader
+   ========================================================================== */
+
+/* OPTIONAL - Animate with Image
+-------------------------------------------------- */
+/*#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99999;
+  height: 100%;
+  overflow: hidden;
+}
+#loader {
+  background: url('../../assets/img/loader.gif') no-repeat;
+  width: 140px;
+  height: 140px;
+  margin: -70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  background-size: 140px auto;
+}
+@-webkit-keyframes spin {
+  0% { 
+    -webkit-transform: rotate(0deg); 
+  }
+  100% { 
+    -webkit-transform: rotate(360deg); 
+  }
+}
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}*/
+
+/* OPTIONAL - Animate with CSS
+-------------------------------------------------- */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 99999999999;
+  height: 100%;
+  overflow: hidden;
+}
+#loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #999;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin: -15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* ==========================================================================
+   Scroll Hint (Arrow Down)
+   ========================================================================== */
+
+.scroll-hint {
+  position: absolute;
+  display: block;
+  height: 75px;
+  width: 200px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+}
+.scroll-hint img {
+  position: absolute;
+  width: 50px;
+  margin-left: -25px;
+  left: 50%;
+  bottom: 0px;
+  display: inline-block;
+  -webkit-animation: arrow_move 1s linear;
+  -moz-animation: arrow_move 1s linear;
+  animation: arrow_move 1s linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes arrow_move {0% {opacity: 1; bottom: 100px; } 50% {opacity: 0; bottom: 96px; } 90% {opacity: 0; bottom: 100px; } 100% {opacity: 1; bottom: 100px; } }
+@-moz-keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+@-o-keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+@keyframes arrow_move {0% {opacity: 1; bottom: 48px; } 50% {opacity: 0; bottom: 24px; } 90% {opacity: 0; bottom: 48px; } 100% {opacity: 1; bottom: 48px; } }
+
+
+/* ========================================================================================================================================
+   Author's Custom Styles
+   ========================================================================================================================================= */
+
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+
+/* Navbar General
+-------------------------------------------------- */
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-fixed-top + * {
+  margin-top: 62px;
+}
+@media (min-width: 768px) {
+  .navbar-fixed-top + * {
+    margin-top: 62px;
+  }
+}
+/*.navbar-static-top {
+  border-bottom-width: 1px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0;
+}*/
+
+/* Navbar Header
+-------------------------------------------------- */
+.navbar-header {
+  height: auto;
+  padding: 0;
+}
+.navbar-brand {
+  width: 200px;
+  height: auto;
+}
+
+/* Navbar Toggler
+-------------------------------------------------- */
+.navbar-toggle {
+  margin-left: 5px; /* Same as your container's padding / custom */
+  margin-right: 5px;
+}
+.navbar-toggle .icon-bar {
+  height: 1px;
+  background: #999;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 6px;
+}
+
+/* Navbar Collapse
+-------------------------------------------------- */
+.navbar-collapse {
+  border-top: 1px solid #eee;
+  padding-left: 10px; /* originally 15 */
+  padding-right: 10px; /* originally 15 */
+}
+@media (min-width: 768px) { 
+  .navbar-collapse {
+    border-top: none;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-collapse > .navbar-nav:first-child {
+    padding-top: 15px;
+  }
+  .navbar-collapse > .navbar-nav:last-child {
+    padding-bottom: 15px;
+  }
+}
+.navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Navbar Top
+-------------------------------------------------- */
+.navbar-top {
+  background: #2c2d31;
+}
+@media (min-width: 768px) {
+  .navbar-top {
+    padding-bottom: 0px;
+    height: 36px;
+  }
+}
+.navbar-top .navbar-nav > li > a {
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  color: #fff;
+}
+.navbar-top .navbar-nav > li > a:hover {
+  background: #6ba934;
+  color: #fff;
+}
+
+/* Navbar Bottom
+-------------------------------------------------- */
+.navbar-bottom .navbar-nav > li > a {
+  font-weight: normal;
+  font-size: 1.1em;
+  padding: 10px 20px;
+}
+@media (min-width: 768px) {
+  .navbar-bottom {
+    height: 60px;
+  }
+  .navbar-bottom .navbar-nav {
+    float: right;
+  }
+  .navbar-bottom .navbar-nav > li > a {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+  }
+}
+
+/* OPTIONAL - Custom dropdown toggle using FontAwesome
+-------------------------------------------------- */
+.dropdown-toggle::after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+  height: auto;
+  margin-left: 0.1em;
+  border: none;
+  opacity: .75;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* OPTIONAL - Sticky Footer
+-------------------------------------------------- */
+.wrapper {
+  min-height: calc(100vh - 73px); /* Footer height */
+}
+
+/* General
+-------------------------------------------------- */
+footer {
+  background: #f9f9f9;
+  padding: 0;
+}
+.footer-top {
+  padding: 1.5rem 0;
+}
+.footer-bottom {
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .footer-top {
+    padding: 3rem 0;
+  }
+}
+
+/* Footer List
+-------------------------------------------------- */
+.footer-item {
+  margin-bottom: 1rem;
+}
+.footer-list [class^="col-"]:last-child .footer-item {
+  margin-bottom: 0;
+} 
+@media (min-width: 768px) {
+  .footer-item {
+    margin-bottom: 0;
+  }
+}
+.footer-brand {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.footer-social li {
+  display: inline-block;
+}
+.footer-social a {
+  font-size: 1.5rem;
+}
+
+
+/* ==========================================================================
+   Home
+   ========================================================================== */ 
+
+/* General
+-------------------------------------------------- */
+
+
+
