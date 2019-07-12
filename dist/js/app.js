@@ -55002,8 +55002,8 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/engengeng/Documents/Antikode/faded-modal/assets/js/app.js */"./assets/js/app.js");
-module.exports = __webpack_require__(/*! /Users/engengeng/Documents/Antikode/faded-modal/assets/scss/main.scss */"./assets/scss/main.scss");
+__webpack_require__(/*! /Users/engengeng/Documents/Antikode/faded-modal-github/assets/js/app.js */"./assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/engengeng/Documents/Antikode/faded-modal-github/assets/scss/main.scss */"./assets/scss/main.scss");
 
 
 /***/ })

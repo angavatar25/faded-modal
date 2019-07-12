@@ -16,16 +16,12 @@
                   <div class="member-image">
                      <img src="<?php echo $prefix;?>assets/img/hehe/Heather_Web_1.jpg" class="image-main" alt="">
                   </div>
-                  <div class="member-name">
-                     <p class="team-name">
-                        Andreas Dwi Jatmiko
-                     </p>
+                  <p class="team-name">Andreas Dwi Jatmiko</p>
+                  <p class="position">Senior Front-End Developer</p>
+                  <div class="view-bio">
+                     View Bio
+                     <i class="fal fa-long-arrow-right"></i>
                   </div>
-                  <div class="container container-sm">
-                     <!-- <a href="" data-toggle="modal" data-target="#modalFull">cs</a> -->
-                     <!-- <button type="button" class="btn btn-modal btn-primary" data-toggle="modal" data-target="#modalFull">Trigger Modal</button> -->
-                  </div>
-              </div>
                </a>
             </div>
          </div>
@@ -48,12 +44,12 @@
                         <li class="title">
                            <p>Senior Front-End Developer</p>
                         </li>
-                        <li>
+                        <li class="social-media">
                            <a href="#">
                               <i class="fab fa-twitter"></i>
                            </a>
                         </li>
-                        <li>
+                        <li class="social-media">
                            <a href="">
                               <i class="fab fa-linkedin-in"></i>
                            </a>

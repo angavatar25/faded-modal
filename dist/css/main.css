@@ -29733,7 +29733,17 @@ td.td-emoji .icon-emoji {
 -------------------------------------------------- */
 
 .our-team .team-member {
-  margin: 0 3% 90px;
+  cursor: pointer;
+}
+
+.our-team .team-member:hover .team-name {
+  transition: .5s ease;
+  color: #007bff;
+}
+
+.our-team .team-member:hover .view-bio .fal {
+  transition: .5s ease-in-out;
+  transform: translate(1.25rem);
 }
 
 .our-team .team-member .member-image {
@@ -29745,7 +29755,31 @@ td.td-emoji .icon-emoji {
 }
 
 .our-team .team-member .member-image .image-main {
+  position: relative;
   max-width: 100%;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition: .8s ease;
+}
+
+.our-team .team-member .member-image:hover .image-main {
+  transform: scale(1.05);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.our-team .team-member .team-name {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #000001;
+  transition: .5s ease;
+}
+
+.our-team .team-member .team-name::after {
+  content: '-';
+  display: block;
+  color: #000001;
+  transition: .5s ease;
 }
 
 .at-section {
@@ -29778,6 +29812,10 @@ td.td-emoji .icon-emoji {
   }
 }
 
+.at-section .modal .modal-dialog .modal-content .modal-body .close {
+  position: fixed;
+}
+
 @media (min-width: 768px) {
   .at-section .modal .modal-dialog .modal-content .modal-body .wrapper-content {
     width: 45%;
@@ -29788,8 +29826,8 @@ td.td-emoji .icon-emoji {
 @media (max-width: 767.98px) {
   .at-section .modal .modal-dialog .modal-content .modal-body .wrapper-content {
     margin-top: 18.75rem;
-    margin-left: 14px;
-    margin-right: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -29806,6 +29844,10 @@ td.td-emoji .icon-emoji {
   list-style-type: none;
   display: inline-block;
   position: relative;
+}
+
+.at-section .modal .modal-dialog .modal-content .modal-body .wrapper-content .modal-title .social-media {
+  width: 1.25rem;
 }
 
 .at-section .modal .modal-dialog .modal-content .modal-body .wrapper-content .text {
