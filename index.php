@@ -7,72 +7,26 @@
 </head>
 <body>
    <?php include($prefix."include/tracking-script/body.php"); ?>
-
-   <section class="our-team">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-6">
-               <a href="#" class="team-member" data-toggle="modal" data-target="#modalFull">
-                  <div class="member-image">
-                     <img src="<?php echo $prefix;?>assets/img/hehe/Heather_Web_1.jpg" class="image-main" alt="">
-                  </div>
-                  <p class="team-name">Andreas Dwi Jatmiko</p>
-                  <p class="position">Senior Front-End Developer</p>
-                  <div class="view-bio">
-                     View Bio
-                     <i class="fal fa-long-arrow-right"></i>
-                  </div>
-               </a>
-            </div>
-         </div>
+   <div class="hamburger" onclick="openNav()" id="nav">
+      <div class="hamburger__container">
+         <div class="hamburger__inner"></div>
+         <div class="hamburger__hidden"></div>
       </div>
-   </section>
-
-   <section class="at-section">
-      <div class="modal modal-full fade fadeinup-sm-down" id="modalFull" tabindex="1" role="dialog">
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-               <div class="modal-body p-box">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true"><i class="fal fa-times"></i></span>
-                  </button>
-                  <div class="wrapper-content">
-                     <div class="modal-teamname">
-                        <h1 class="name">Andreas Dwi Jatmiko</h1>
-                     </div>
-                     <div class="modal-title">
-                        <li class="title">
-                           <p>Senior Front-End Developer</p>
-                        </li>
-                        <li class="social-media">
-                           <a href="#">
-                              <i class="fab fa-twitter"></i>
-                           </a>
-                        </li>
-                        <li class="social-media">
-                           <a href="">
-                              <i class="fab fa-linkedin-in"></i>
-                           </a>
-                        </li>
-                     </div>
-                     <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                     </p>
-                     <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                     </p>
-                     <p class="text"></p>
-                     <p class="text"></p>
-                  </div>
-                  <div class="modal-image" style="background-image: url(https://humanventures.co/wp-content/uploads/2017/09/Heather_Popup_Test_6.jpg);"></div>
-               </div>
-            </div>
-         </div>
+      <div class="hamburger-content">
+         <ul class="navbar-content">
+            <li><a href="#">About</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Perspective</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">More</a></li>
+         </ul>
       </div>
-   </section>
-   <?php include($prefix."include/script.php"); ?>
+   </div>
+
 </body>
+<script>
+   document.querySelector(".hamburger").addEventListener("click", e => {
+      e.currentTarget.classList.toggle("is-active");
+   });
+</script>
 </html>
