@@ -72,6 +72,23 @@ $gray-800: #333333 !default; // Antikode - $body-color
 $gray-900: #191919 !default; // Antikode
 $black: #000001 !default;
 
+/* Custom Component
+-------------------------------------------------- */
+$h-padding: 50px;
+$h-width: 36px;
+$h-height: 24px;
+$h-background-color: transparent;
+$h-line-color: #fff;
+$h-hover-line-color: #007bff;
+$h-line-height: 2px;
+$h-border-radius: 4px;
+$h-transition-time: 0.4s;
+$h-transition-function: ease;
+$h-transition-opacity: 0;
+$h-vertical-gap: 13px;
+$h-initial-opposition: 5px;
+$h-hide-distance: $h-width + $h-padding;
+
 /* Colors - Other Colors
 -------------------------------------------------- */
 $blue: #007bff !default;

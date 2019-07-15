@@ -173,14 +173,159 @@
 /* ========================================================================================================================================
    Common Components
    ========================================================================================================================================= */
-.ps__rail-y {
-  height: 0px !important;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
 
-  .ps__thumb-y {
-    height: 50px !important;
+@mixin line-props {
+  width: 100%;
+  height: $h-line-height;
+  background-color: black;
+  border-radius: $h-border-radius;
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: $h-transition-time;
+}
+
+#nav.is-active {
+  background-color: $black;
+  .hamburger-content {
+    display: block;
+    transition: .5s ease;
   }
 }
 
+.hamburger {
+  width: 100%;
+  height: 100vh;
+  padding: $h-padding;
+  display: inline-block;
+  overflow: hidden;
+  background-color: transparent;
+  .hamburger-content {
+    display: none;
+    padding-top: 6.25rem;
+    .navbar-content {
+      padding-inline-start: 0;
+      li{
+        list-style-type: none;
+        text-align: justify;
+        text-align: center;
+        position: relative;
+        a {
+          display: inline-block;
+          margin-bottom: 10px;
+          color: $white;
+          font-size: 2em;
+          line-height: 1.2;
+          letter-spacing: 2px;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 10px 0;
+          -webkit-transition: all 0.2s;
+          transition: all 0.2s;
+          cursor: pointer;
+          &:hover{
+            color: $red;
+            letter-spacing: 5px;
+            text-decoration: none;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  &__container {
+    width: $h-width;
+    height: $h-height;
+    position: relative;
+  }
+  &:hover &__inner {
+    transform: translate(-#{$h-hide-distance}, 50%);
+    opacity: $h-transition-opacity;
+  }
+  &:hover &__inner::before, &:hover &__inner::after {
+    transform: translate(#{$h-hide-distance * 2}, 0);
+    opacity: $h-transition-opacity;
+  }
+  &.is-active &__inner {
+    display: none;
+  }
+  &__inner {
+    @include line-props();
+    top: 50%;
+    transform: translate($h-initial-opposition, -50%);
+    opacity: 1;
+    &::before, &::after {
+      @include line-props();
+      content: "";
+      opacity: 1;
+      transform: translate(-#{$h-initial-opposition}, 0);
+    }
+    &::before {
+      top: -#{$h-vertical-gap};
+    }
+    &::after {
+      top: $h-vertical-gap;
+    }
+  }
+  &:hover &__hidden {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  &:hover &__hidden::before, &:hover &__hidden::after {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+
+  &.is-active &__hidden  {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+
+  &.is-active &__hidden::before {
+    transform: translate(0, #{$h-vertical-gap}) rotate(90deg);
+    transform-origin: center;
+  }
+
+  &.is-active &__hidden::after {
+    transform-origin: center;
+    transform: translate(0, -#{$h-vertical-gap}) rotate(0);
+  }
+
+  &__hidden {
+    opacity: 0;
+    @include line-props();
+    
+    background-color: $red;
+    top: 50%;
+    transform: translate(#{$h-hide-distance}, -50%);
+    
+
+    &::before,
+    &::after {
+      @include line-props();
+      background-color: $red;
+
+      content: "";
+      transform: translate(#{$h-hide-distance * 2}, 0);
+    }
+
+    &::before {
+      top: -#{$h-vertical-gap};
+    }
+
+    &::after {
+      top: $h-vertical-gap;
+    }
+  }
+}
 /* ==========================================================================
    Type
    ========================================================================== */
@@ -191,167 +336,7 @@
 @include font-face("Proxima Nova", "Proxima Nova Regular", 400);
 @include font-face("Proxima Nova", "Proxima Nova Semibold", 600);
 
-/* ==========================================================================
-   Section for Card
-   ========================================================================== */
-
-.our-team {
-  .team-member {
-    &:hover {
-      .team-name {
-        transition: .5s ease;
-        color: $blue;
-      }
-      .view-bio {
-        .fal {
-          transition: .5s ease-in-out;
-          transform: translate(1.25rem);
-        }
-      }
-    }
-    cursor: pointer;
-    .member-image {
-      margin-bottom: 2.1875rem;
-      overflow: hidden;
-      position: relative;
-      max-width: 25rem;
-      max-height: 25rem;
-      .image-main {
-        position: relative;
-        max-width: 100%;
-        filter: grayscale(100%);
-        -webkit-filter: grayscale(100%);
-        transition: .8s ease;
-      }
-        &:hover .image-main {
-          transform: scale(1.05);
-          filter: grayscale(0);
-        }
-    }
-    .team-name {
-      font-size: 1.875rem;
-      font-weight: bold;
-      color: $black;
-      transition: .5s ease;
-      &::after {
-        content: '-';
-        display: block;
-        color: $black;
-        transition: .5s ease;
-      }
-    }
-  }
-}
-
-/* ==========================================================================
-   Section for Modal
-   ========================================================================== */
-
-
-.at-section {
-  z-index: 100;
-  .modal {
-    .modal-dialog {
-      max-width: 100%;
-      @include media-breakpoint-up(md) {
-        margin: 1.75rem;
-      }
-      .modal-content {
-        z-index: 1;
-        @include media-breakpoint-up(md) {
-          height: calc(100vh - 50px);
-        }
-        .modal-body {
-          overflow: scroll;
-          @include media-breakpoint-down(sm) {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to top, #EFEFEF, rgba(239,239,239,0));
-          }
-          .close {
-            position: fixed;
-          }
-          .wrapper-content {
-            @include media-breakpoint-up(md) {
-              width: 45%;
-              padding: 125px 75px 100px;  
-            }
-            @include media-breakpoint-down(sm) {
-              margin-top: 18.75rem;
-              margin-left: 20px;
-              margin-right: 20px;
-            }
-            .modal-teamname {
-              .name {
-                @include media-breakpoint-down(sm) {
-                  font-size: 1.875rem;
-                }
-                &::after {
-                  content: '-';
-                  display: block;
-                }
-              }
-            }
-            .modal-title {
-              .title {
-                margin-right: 1.25rem;
-              }
-              li {
-                list-style-type: none;
-                display: inline-block;
-                position: relative;
-              }
-              .social-media {
-                width: 1.25rem;
-                &:hover .fa-twitter {
-                  color: #38A1F3;
-                }
-                &:hover .fa-linkedin-in {
-                  color: #0077B5;
-                }
-              }
-            }
-            .text {
-              line-height: 2;
-            }
-          }
-          .modal-image {
-            &::before {
-              content: '';
-            }
-            background-image: url("/assets/img/hehe/Heather_Popup_Test_6.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center left;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            position: fixed;
-            z-index: -10;
-            @include media-breakpoint-down(sm) {
-              height: 25rem;
-              &::before {
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                z-index: -5;
-                background: -webkit-gradient(linear, left bottom, left top, from(#EFEFEF), to(rgba(239,239,239,0)));
-                background: linear-gradient(to top, #EFEFEF, rgba(239,239,239,0));
-                width: 100%;
-                height: 100%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 
 /* ==========================================================================
    Home
    ========================================================================== */
-
-// Add custom styles here
